@@ -8,6 +8,6 @@ redirect_from:
   - /about.html
 ---
 
-This is Poorvi Acharya's personal website!
+Hello! I'm Poorvi Acharya and I'm an incoming Computer Science PhD student at George Mason University. I'm interested in developing educational language tools for low-resource languages. I will be advised by Prof. Antonis Anastasopoulos and be a part of GMU's NLP lab .
 
-I am very cool!
+Before starting my PhD, I worked for 3 years as a software engineer to scale out data pipelines. I completed my undergrad at UC Berkeley in Computer Science. 
