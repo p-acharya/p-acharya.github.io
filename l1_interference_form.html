@@ -1,29 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My First Survey</title>
+    <title>SurveyJS for HTML/CSS/JS Applications - Multi-Page Survey</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://unpkg.com/survey-core/survey-core.min.css" type="text/css" rel="stylesheet">
+    
+    <script type="text/javascript" src="https://unpkg.com/survey-core/survey.core.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/survey-js-ui/survey-js-ui.min.js"></script>
 </head>
 <body>
     <div id="surveyContainer"></div>
-
-    <script type="text/javascript" src="https://unpkg.com/survey-core/survey.core.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/survey-js-ui/survey-js-ui.min.js"></script>
-    <script type="text/javascript">
+    <div id="resultsContainer" style="display:none;">
+        <p>Result JSON:</p>
+        <code id="surveyResults" style="white-space:pre;"></code>
+    </div>
+    <script>
         const surveyJson = {
-            elements: [{
-                name: "FirstName",
-                title: "Enter your first name:",
-                type: "text"
-            }, {
-                name: "LastName",
-                title: "Enter your last name:",
-                type: "text"
-            }]
-        };
-
+      title: "L1 Interference Validation",
+      headerView: "advanced",
+      showProgressBar: "top",
+      completedHtml: "<h3>Thank you for your feedback</h3>",
+      completedHtmlOnCondition: [
+        {
+          expression: "{example1_l1} = 'No' or {example1_exp} = 'No'",
+          html: "<h3>Thank you for your feedback</h3><h4>Your detailed explanation will help improve our annotation system.</h4>"
+        }
+      ],
+      pages: [
+        {
+          name: "example1",
+          elements: [
+            {
+              type: "html",
+              html: `
+                <h3>Example 1</h3>
+                <p><strong>Incorrect:</strong> <code>related with</code></p>
+                <p><strong>Correct:</strong> <code>related to</code></p>
+                <p><strong>Explanation:</strong> In Chinese, the equivalent expression for \"related to\" uses a structure that might be translated directly as \"related with,\" leading to grammatical interference.</p>
+              `
+            },
+            {
+              type: "radiogroup",
+              name: "example1_l1",
+              title: "Q1: Is this a genuine case of L1 interference from Chinese?",
+              isRequired: true,
+              choices: [
+                "Yes",
+                "No"
+              ]
+            },
+            {
+              type: "comment",
+              name: "example1_l1_explanation",
+              visibleIf: "{example1_l1} = 'No'",
+              title: "If no, please explain why:"
+            },
+            {
+              type: "radiogroup",
+              name: "example1_exp",
+              title: "Q2: Is GPT-4's explanation of the L1 influence accurate?",
+              isRequired: true,
+              choices: [
+                "Yes",
+                {
+                  value: "No",
+                  text: "No (explain why)"
+                }
+              ]
+            },
+            {
+              type: "comment",
+              name: "example1_exp_explanation",
+              visibleIf: "{example1_exp} = 'No'",
+              title: "If no, what is the correct linguistic explanation?"
+            }
+          ]
+        }
+      ]
+    };
         const survey = new Survey.Model(surveyJson);
 
         async function sendResultsToGoogleAppsScript(data) {
