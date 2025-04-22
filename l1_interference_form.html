@@ -1,68 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>L1 Interference Validation</title>
-  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.5.10/css/pico.min.css">
+  <meta charset="UTF-8">
+  <title>L1 Interference Form (SurveyJS)</title>
+  <script src="https://unpkg.com/survey-core@1.9.128/survey.core.min.js"></script>
+  <script src="https://unpkg.com/survey-knockout@1.9.128/survey.ko.min.js"></script>
+  <link href="https://unpkg.com/survey-core@1.9.128/modern.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+  </style>
 </head>
 <body>
-  <main class="container">
-    <h1>L1 Interference Validation</h1>
-    <p>Please review these examples and answer the questions below.</p>
-
-    <form id="interference-form">
-      <fieldset>
-        <legend><strong>Example 1</strong></legend>
-        <p><code>Incorrect:</code> <kbd>related with</kbd><br><code>Correct:</code> <kbd>related to</kbd></p>
-
-        <label>
-          Is this L1 interference?
-          <select name="example1_l1" required>
-            <option value="">Choose...</option>
-            <option>Yes</option>
-            <option>No</option>
-          </select>
-        </label>
-
-        <label>
-          If no, explain:
-          <textarea name="example1_l1_explanation"></textarea>
-        </label>
-
-        <label>
-          Is GPT-4's explanation accurate?
-          <select name="example1_exp" required>
-            <option value="">Choose...</option>
-            <option>Yes</option>
-            <option>No</option>
-          </select>
-        </label>
-
-        <label>
-          If no, explain:
-          <textarea name="example1_exp_explanation"></textarea>
-        </label>
-      </fieldset>
-
-      <button type="submit">Submit</button>
-    </form>
-  </main>
+  <h1>L1 Interference Validation</h1>
+  <div id="surveyElement"></div>
+  <div id="thankYou" style="display:none; text-align:center;">
+    <h2>🎉 Thank you!</h2>
+    <p>Your response has been recorded.</p>
+  </div>
 
   <script>
-    document.getElementById("interference-form").addEventListener("submit", async function(e) {
-      e.preventDefault();
-      const data = Object.fromEntries(new FormData(e.target).entries());
+    Survey.StylesManager.applyTheme("modern");
 
-      const res = await fetch("https://script.google.com/macros/s/AKfycby5-tSsPcNpcXFMiK5hq3TWpYeRXFRBGe5yxbi_XQz_lnDXRfZ5L8YKALfxKZTciD8C/exec", {
-        method: "POST",
-        redirect: "follow",
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify(data)
-      });
+    const surveyJSON = {
+      title: "L1 Interference Validation",
+      showProgressBar: "top",
+      firstPageIsStarted: true,
+      pages: [
+        {
+          elements: [
+            {
+              type: "html",
+              html: `
+                <h3>Example 1</h3>
+                <p><strong>Incorrect:</strong> <code>related with</code></p>
+                <p><strong>Correct:</strong> <code>related to</code></p>
+                <p><strong>Explanation:</strong> In Chinese, the equivalent expression for "related to" uses a structure that might be translated directly as "related with," leading to grammatical interference.</p>
+              `
+            },
+            {
+              type: "radiogroup",
+              name: "example1_l1",
+              title: "Q1: Is this a genuine case of L1 interference from Chinese?",
+              isRequired: true,
+              choices: ["Yes", "No"]
+            },
+            {
+              type: "comment",
+              name: "example1_l1_explanation",
+              visibleIf: "{example1_l1} = 'No'",
+              title: "If no, please explain why:"
+            },
+            {
+              type: "radiogroup",
+              name: "example1_exp",
+              title: "Q2: Is GPT-4's explanation of the L1 influence accurate?",
+              isRequired: true,
+              choices: ["Yes", "No"]
+            },
+            {
+              type: "comment",
+              name: "example1_exp_explanation",
+              visibleIf: "{example1_exp} = 'No'",
+              title: "If no, what is the correct linguistic explanation?"
+            }
+          ]
+        }
+      ]
+    };
 
-      alert(res.ok ? "Submitted!" : "Failed to submit.");
-      e.target.reset();
+    const survey = new Survey.Model(surveyJSON);
+    survey.onComplete.add(async function (sender) {
+      const data = sender.data;
+      try {
+        await fetch("YOUR_GOOGLE_SCRIPT_URL_HERE", {
+          method: "POST",
+          redirect: "follow",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+          },
+          body: JSON.stringify(data)
+        });
+        document.getElementById("surveyElement").style.display = "none";
+        document.getElementById("thankYou").style.display = "block";
+      } catch (error) {
+        alert("Something went wrong while submitting. Please try again later.");
+        console.error(error);
+      }
     });
+
+    Survey.SurveyNG.render("surveyElement", { model: survey });
   </script>
 </body>
 </html>
