@@ -9,6 +9,31 @@
     <script type="text/javascript" src="https://unpkg.com/survey-core/survey.core.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/survey-js-ui/survey-js-ui.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/survey-core/themes/layered-dark-panelless.min.js"></script>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  body {
+    font-family: sans-serif;
+  }
+  .sv-root-modern {
+    min-height: 100vh;
+  }
+
+  /* 🔪 Kill the default white SurveyJS container */
+  .sv-container-modern {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Optional: remove any outer padding/margin from the root */
+  .sv-root-modern {
+    background-color: transparent !important;
+  }
+</style>
 </head>
 <body>
     <div id="surveyContainer"></div>
@@ -29,59 +54,77 @@
         }
       ],
       pages: [
+    {
+      "name": "l1_interference_with_context",
+      "elements": [
         {
-          name: "example1",
-          elements: [
-            {
-              type: "html",
-              html: `
-                <h3>Example 1</h3>
-                <p><strong>Incorrect:</strong> <code>related with</code></p>
-                <p><strong>Correct:</strong> <code>related to</code></p>
-                <p><strong>Explanation:</strong> In Chinese, the equivalent expression for \"related to\" uses a structure that might be translated directly as \"related with,\" leading to grammatical interference.</p>
-              `
-            },
-            {
-              type: "radiogroup",
-              name: "example1_l1",
-              title: "Q1: Is this a genuine case of L1 interference from Chinese?",
-              isRequired: true,
-              choices: [
-                "Yes",
-                "No"
-              ]
-            },
-            {
-              type: "comment",
-              name: "example1_l1_explanation",
-              visibleIf: "{example1_l1} = 'No'",
-              title: "If no, please explain why:"
-            },
-            {
-              type: "radiogroup",
-              name: "example1_exp",
-              title: "Q2: Is GPT-4's explanation of the L1 influence accurate?",
-              isRequired: true,
-              choices: [
-                "Yes",
-                {
-                  value: "No",
-                  text: "No (explain why)"
-                }
-              ]
-            },
-            {
-              type: "comment",
-              name: "example1_exp_explanation",
-              visibleIf: "{example1_exp} = 'No'",
-              title: "If no, what is the correct linguistic explanation?"
-            }
-          ]
+          "type": "html",
+          "html": "<h3>Example 1</h3><p><strong>Context: <i>Hasa wants to learn neuroscience. Eric wants to learn sports management.</i></strong></p><p><strong>Incorrect:</strong> <code>learn</code></p><p><strong>Correct:</strong> <code>study</code></p><p><strong>Type:</strong> Lexical interference (100%)</p><p><strong>Explanation:</strong> In Chinese, the word for 'learn' (学, xué) can also mean 'study', leading to lexical interference when choosing between 'learn' and 'study' in English.</p>"
+        },
+        {
+          "type": "radiogroup",
+          "name": "example1_l1",
+          "title": "Q1: Is this a genuine case of L1 interference from Chinese?",
+          "isRequired": true,
+          "choices": ["Yes", "No"]
+        },
+        {
+          "type": "comment",
+          "name": "example1_l1_explanation",
+          "visibleIf": "{example1_l1} = 'No'",
+          "title": "If no, please explain why:"
+        },
+        {
+          "type": "radiogroup",
+          "name": "example1_exp",
+          "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
+          "isRequired": true,
+          "choices": ["Yes", { "value": "No", "text": "No (explain why)" }]
+        },
+        {
+          "type": "comment",
+          "name": "example1_exp_explanation",
+          "visibleIf": "{example1_exp} = 'No'",
+          "title": "If no, what is the correct linguistic explanation?"
+        },
+
+        {
+          "type": "html",
+          "html": "<h3>Example 2</h3><p><strong>Context: <i>In my country, China, although people believe that it is right for cars to comity pedestrians, in fact, there are not many vehicles that can comity pedestrians.</i></strong></p><p><strong>Incorrect:</strong> <code>comity</code></p><p><strong>Correct:</strong> <code>accommodate</code></p><p><strong>Type:</strong> Lexical interference (20%), Lexical error (80%)</p><p><strong>Explanation:</strong> The learner may have borrowed the Chinese concept of 'comity' (礼让) in a way that doesn't translate directly to English 'accommodate' or 'yield', which are more appropriate in this context.</p>"
+        },
+        {
+          "type": "radiogroup",
+          "name": "example2_l1",
+          "title": "Q1: Is this a genuine case of L1 interference from Chinese?",
+          "isRequired": true,
+          "choices": ["Yes", "No"]
+        },
+        {
+          "type": "comment",
+          "name": "example2_l1_explanation",
+          "visibleIf": "{example2_l1} = 'No'",
+          "title": "If no, please explain why:"
+        },
+        {
+          "type": "radiogroup",
+          "name": "example2_exp",
+          "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
+          "isRequired": true,
+          "choices": ["Yes", { "value": "No", "text": "No (explain why)" }]
+        },
+        {
+          "type": "comment",
+          "name": "example2_exp_explanation",
+          "visibleIf": "{example2_exp} = 'No'",
+          "title": "If no, what is the correct linguistic explanation?"
         }
       ]
-    };
+    }
+  ]
+};
         const survey = new Survey.Model(surveyJson);
         survey.applyTheme(SurveyTheme.LayeredDarkPanelless);
+
 
         async function sendResultsToGoogleAppsScript(data) {
             try {
