@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arabic L1 Interference Annotations</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://unpkg.com/survey-core/survey-core.min.css"
+          type="text/css" rel="stylesheet">
+
+    <script type="text/javascript"
+            src="https://unpkg.com/survey-core/survey.core.min.js"></script>
+    <script type="text/javascript"
+            src="https://unpkg.com/survey-js-ui/survey-js-ui.min.js"></script>
+    <!--    <script type="text/javascript" src="https://unpkg.com/survey-core/themes/layered-dark-panelless.min.js"></script>-->
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        .sv-root-modern {
+            min-height: 100vh;
+        }
+
+        /* 🔪 Kill the default white SurveyJS container */
+        .sv-container-modern {
+            background-color: transparent !important;
+            box-shadow: none !important;
+            border: none !important;
+        }
+
+        /* Optional: remove any outer padding/margin from the root */
+        .sv-root-modern {
+            background-color: transparent !important;
+        }
+    </style>
+</head>
+<body>
+<div id="surveyContainer"></div>
+<div id="resultsContainer" style="display:none;">
+    <p>Result JSON:</p>
+    <code id="surveyResults" style="white-space:pre;"></code>
+</div>
+<script>
+    const surveyJson = {
+        title: "Arabic L1 Interference Validation",
+        headerView: "advanced",
+        showProgressBar: "top",
+        completedHtml: "<h3>Thank you for your feedback</h3>",
+        completedHtmlOnCondition: [
+            {
+                expression: "{example1_plausible} = 'No' or {example1_gpt4_accurate} = 'No'",
+                html: "<h3>Thank you for your feedback</h3><h4>Your detailed explanation will help improve our annotation system.</h4>"
+            }
+        ],
+        pages: [
+            {
+                "name": "l1_interference_with_context",
+                "elements": [
+                    {
+                        "type": "html",
+                        "name": "example1_context",
+                        "html": "<h3>Example</h3><p><strong>Context:</strong> <i>I have to go to the meeting at 1:30-3:00 on Tuesday and make sure I get my registration process done and give it to the front desk at the global center.</i></p><p><strong>Incorrect:</strong> <code>regestration</code></p><p><strong>Correct:</strong> <code>registration</code></p><p><strong>Type:</strong> Orthographic interference (60%), Vowel substitution/omission (40%)</p><p><strong>Explanation:</strong> Arabic speakers may experience difficulties with vowel substitutions due to differences in vowel representation in Arabic script, leading to the misspelling of 'registration' as 'regestration'.</p>"
+                    },
+                    {
+                        "type": "radiogroup",
+                        "name": "example1_plausible",
+                        "title": "Q1: Is this a plausible case of L1 interference from Arabic?",
+                        "isRequired": true,
+                        "choices": [
+                            "Yes",
+                            {
+                                "value": "No",
+                                "text": "No (explain why)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "comment",
+                        "name": "example1_not_plausible_explanation",
+                        "visibleIf": "{example1_plausible} = 'No'",
+                        "title": "If no, please explain why:"
+                    },
+                    {
+                        "type": "radiogroup",
+                        "name": "example1_gpt4_accurate",
+                        "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
+                        "isRequired": true,
+                        "choices": [
+                            "Yes",
+                            {
+                                "value": "No",
+                                "text": "No (explain why)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "comment",
+                        "name": "example1_gpt4_not_accurate_explanation",
+                        "visibleIf": "{example1_gpt4_accurate} = 'No'",
+                        "title": "If no, what is the correct linguistic explanation?"
+                    },
+                    {
+                        "type": "html",
+                        html: "<h3>Example 2</h3><p><strong>Context:</strong> <i>I think the most important thing in the guest speaker part is that everyone has to focus in his self and try to improve it not to watch people things.</i></p><p><strong>Incorrect:</strong> <code>people things</code></p><p><strong>Correct:</strong> <code>other people's things</code></p><p><strong>Type:</strong> Syntactic interference (100%)</p><p><strong>Explanation:</strong> Arabic syntax often omits possessive indicators seen in English, leading to direct translations that lack clarity.</p>"
+                    },
+                    {
+                        "type": "radiogroup",
+                        "name": "example2_plausible",
+                        "title": "Q1: Is this a plausible case of L1 interference from Arabic?",
+                        "isRequired": true,
+                        "choices": [
+                            "Yes",
+                            {
+                                "value": "No",
+                                "text": "No (explain why)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "comment",
+                        "name": "example2_not_plausible_explanation",
+                        "visibleIf": "{example2_plausible} = 'No'",
+                        "title": "If no, please explain why:"
+                    },
+                    {
+                        "type": "radiogroup",
+                        "name": "example2_gpt4_accurate",
+                        "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
+                        "isRequired": true,
+                        "choices": [
+                            "Yes",
+                            {
+                                "value": "No",
+                                "text": "No (explain why)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "comment",
+                        "name": "example2_gpt4_not_accurate_explanation",
+                        "visibleIf": "{example2_gpt4_accurate} = 'No'",
+                        "title": "If no, what is the correct linguistic explanation?"
+                    },
+                    {
+                        "type": "html",
+                        html: "<h3>Example 3</h3><p><strong>Context:</strong> <i>Part of it was trying to learn about culture people and the other part was social learning.</i></p><p><strong>Incorrect:</strong> <code>culture people</code></p><p><strong>Correct:</strong> <code>people's culture</code></p><p><strong>Type:</strong> Syntactic interference (60%), Grammatical error (40%)</p><p><strong>Explanation:</strong> Arabic syntax often places nouns before adjectives, leading to the structure 'culture people' instead of 'people's culture'.</p>"
+                    },
+                    {
+                        "type": "radiogroup",
+                        "name": "example3_plausible",
+                        "title": "Q1: Is this a plausible case of L1 interference from Arabic?",
+                        "isRequired": true,
+                        "choices": [
+                            "Yes",
+                            {
+                                "value": "No",
+                                "text": "No (explain why)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "comment",
+                        "name": "example3_not_plausible_explanation",
+                        "visibleIf": "{example3_plausible} = 'No'",
+                        "title": "If no, please explain why:"
+                    },
+                    {
+                        "type": "radiogroup",
+                        "name": "example3_gpt4_accurate",
+                        "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
+                        "isRequired": true,
+                        "choices": [
+                            "Yes",
+                            {
+                                "value": "No",
+                                "text": "No (explain why)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "comment",
+                        "name": "example3_gpt4_not_accurate_explanation",
+                        "visibleIf": "{example3_gpt4_accurate} = 'No'",
+                        "title": "If no, what is the correct linguistic explanation?"
+                    },
+                    {
+                        "type": "html",
+                        html: "<h3>Example 4</h3><p><strong>Context:</strong> <i>During this experience, what I was thinking how long it took him to learn how to sing that good.</i></p><p><strong>Incorrect:</strong> <code>what I was thinking</code></p><p><strong>Correct:</strong> <code>I was thinking about</code></p><p><strong>Type:</strong> Syntactic interference (100%)</p><p><strong>Explanation:</strong> Arabic often follows a topic-comment structure, leading to the incorrect English syntax 'what I was thinking how long' instead of 'I was thinking about how long'.</p>"
+                    },
+                    {
+                        "type": "radiogroup",
+                        "name": "example4_plausible",
+                        "title": "Q1: Is this a plausible case of L1 interference from Arabic?",
+                        "isRequired": true,
+                        "choices": [
+                            "Yes",
+                            {
+                                "value": "No",
+                                "text": "No (explain why)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "comment",
+                        "name": "example4_not_plausible_explanation",
+                        "visibleIf": "{example4_plausible} = 'No'",
+                        "title": "If no, please explain why:"
+                    },
+                    {
+                        "type": "radiogroup",
+                        "name": "example4_gpt4_accurate",
+                        "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
+                        "isRequired": true,
+                        "choices": [
+                            "Yes",
+                            {
+                                "value": "No",
+                                "text": "No (explain why)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "comment",
+                        "name": "example4_gpt4_not_accurate_explanation",
+                        "visibleIf": "{example4_gpt4_accurate} = 'No'",
+                        "title": "If no, what is the correct linguistic explanation?"
+                    },
+                    {
+                        "type": "html",
+                        html: "<h3>Example 5</h3><p><strong>Context:</strong> <i>Their result shows that the training received by students of education had a role in contributing to the promotion of the concept of SDGs which is undoubtedly, it is applicable to the level of students as well as all university employees.</i></p><p><strong>Incorrect:</strong> <code>which is undoubtedly, it is applicable</code></p><p><strong>Correct:</strong> <code>which is undoubtedly applicable</code></p><p><strong>Type:</strong> Syntactic interference (80%), Grammatical error (20%)</p><p><strong>Explanation:</strong> Arabic syntax may lead to redundant use of pronouns or clauses, affecting English sentence structure.</p>"
+                    },
+                    {
+                        "type": "radiogroup",
+                        "name": "example5_plausible",
+                        "title": "Q1: Is this a plausible case of L1 interference from Arabic?",
+                        "isRequired": true,
+                        "choices": [
+                            "Yes",
+                            {
+                                "value": "No",
+                                "text": "No (explain why)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "comment",
+                        "name": "example5_not_plausible_explanation",
+                        "visibleIf": "{example5_plausible} = 'No'",
+                        "title": "If no, please explain why:"
+                    },
+                    {
+                        "type": "radiogroup",
+                        "name": "example5_gpt4_accurate",
+                        "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
+                        "isRequired": true,
+                        "choices": [
+                            "Yes",
+                            {
+                                "value": "No",
+                                "text": "No (explain why)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "comment",
+                        "name": "example5_gpt4_not_accurate_explanation",
+                        "visibleIf": "{example5_gpt4_accurate} = 'No'",
+                        "title": "If no, what is the correct linguistic explanation?"
+                    },
+                    {
+                        "type": "html",
+                        html: "<h3>Example 6</h3><p><strong>Context:</strong> <i>I hope this portfolio clears up some of the misunderstandings and provides valuable guidance in academic writing generally and in the Operations Research field, particularly. In order for international students who are seeking graduate studies to take advantage of.</i></p><p><strong>Incorrect:</strong> <code>In order for</code></p><p><strong>Correct:</strong> <code>In order to</code></p><p><strong>Type:</strong> Syntactic interference (100%)</p><p><strong>Explanation:</strong> Arabic syntax sometimes leads to the use of 'for' where 'to' is more appropriate in English infinitive constructions, causing syntactic interference.</p>"
+                    },
+                    {
+                        "type": "radiogroup",
+                        "name": "example6_plausible",
+                        "title": "Q1: Is this a plausible case of L1 interference from Arabic?",
+                        "isRequired": true,
+                        "choices": [
+                            "Yes",
+                            {
+                                "value": "No",
+                                "text": "No (explain why)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "comment",
+                        "name": "example6_not_plausible_explanation",
+                        "visibleIf": "{example6_plausible} = 'No'",
+                        "title": "If no, please explain why:"
+                    },
+                    {
+                        "type": "radiogroup",
+                        "name": "example6_gpt4_accurate",
+                        "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
+                        "isRequired": true,
+                        "choices": [
+                            "Yes",
+                            {
+                                "value": "No",
+                                "text": "No (explain why)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "comment",
+                        "name": "example6_gpt4_not_accurate_explanation",
+                        "visibleIf": "{example6_gpt4_accurate} = 'No'",
+                        "title": "If no, what is the correct linguistic explanation?"
+                    },
+                    {
+                        "type": "html",
+                        html: "<h3>Example 7</h3><p><strong>Context:</strong> <i>1: manige my time</i></p><p><strong>Incorrect:</strong> <code>manige</code></p><p><strong>Correct:</strong> <code>manage</code></p><p><strong>Type:</strong> Phonetic interference (60%), Orthographic interference (40%)</p><p><strong>Explanation:</strong> Arabic speakers might write phonetically due to differences in sound representation between Arabic and English, influencing the spelling of 'manage' as 'manige'.</p>"
+                    },
+                    {
+                        "type": "radiogroup",
+                        "name": "example7_plausible",
+                        "title": "Q1: Is this a plausible case of L1 interference from Arabic?",
+                        "isRequired": true,
+                        "choices": [
+                            "Yes",
+                            {
+                                "value": "No",
+                                "text": "No (explain why)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "comment",
+                        "name": "example7_not_plausible_explanation",
+                        "visibleIf": "{example7_plausible} = 'No'",
+                        "title": "If no, please explain why:"
+                    },
+                    {
+                        "type": "radiogroup",
+                        "name": "example7_gpt4_accurate",
+                        "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
+                        "isRequired": true,
+                        "choices": [
+                            "Yes",
+                            {
+                                "value": "No",
+                                "text": "No (explain why)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "comment",
+                        "name": "example7_gpt4_not_accurate_explanation",
+                        "visibleIf": "{example7_gpt4_accurate} = 'No'",
+                        "title": "If no, what is the correct linguistic explanation?"
+                    },
+                    {
+                        "type": "html",
+                        html: "<h3>Example 8</h3><p><strong>Context:</strong> <i>The easiest part to remember from the presentation is that he was very welcoming to the university and he made us feel safer by telling us if we faced any type of racism we can just report to them. Me and my group discussed which slides each member of the team is going to take and read in class.</i></p><p><strong>Incorrect:</strong> <code>Me</code></p><p><strong>Correct:</strong> <code>I</code></p><p><strong>Type:</strong> Grammatical interference (80%), Grammatical error (20%)</p><p><strong>Explanation:</strong> In Arabic, subject pronouns are often implied in verb conjugations, and the distinction between subject and object pronouns is less explicit, leading to confusion in English usage.</p>"
+                    },
+                    {
+                        "type": "radiogroup",
+                        "name": "example8_plausible",
+                        "title": "Q1: Is this a plausible case of L1 interference from Arabic?",
+                        "isRequired": true,
+                        "choices": [
+                            "Yes",
+                            {
+                                "value": "No",
+                                "text": "No (explain why)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "comment",
+                        "name": "example8_not_plausible_explanation",
+                        "visibleIf": "{example8_plausible} = 'No'",
+                        "title": "If no, please explain why:"
+                    },
+                    {
+                        "type": "radiogroup",
+                        "name": "example8_gpt4_accurate",
+                        "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
+                        "isRequired": true,
+                        "choices": [
+                            "Yes",
+                            {
+                                "value": "No",
+                                "text": "No (explain why)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "comment",
+                        "name": "example8_gpt4_not_accurate_explanation",
+                        "visibleIf": "{example8_gpt4_accurate} = 'No'",
+                        "title": "If no, what is the correct linguistic explanation?"
+                    }
+                ]
+            }
+        ]
+    };
+    const STORAGE_ITEM_KEY = "my-survey";
+    const USER_ID = localStorage.getItem("userId") || "guest-user";
+    const survey = new Survey.Model(surveyJson);
+    restoreSurveyData(survey);
+    survey.setValue("userId", USER_ID);
+
+    function saveSurveyData(survey) {
+        const data = survey.data;
+        data.pageNo = survey.currentPageNo;
+        try {
+            window.localStorage.setItem(STORAGE_ITEM_KEY, JSON.stringify(data));
+            console.log("Survey data saved locally.");
+        } catch (error) {
+            console.error("Error saving survey data:", error);
+        }
+    }
+
+    function restoreSurveyData(survey) {
+        const prevData = window.localStorage.getItem(STORAGE_ITEM_KEY);
+        if (prevData) {
+            try {
+                const data = JSON.parse(prevData);
+                if (data) {
+                    survey.data = data;
+                    if (data.pageNo) {
+                        survey.currentPageNo = data.pageNo;
+                    }
+                    console.log("Survey data restored.");
+                }
+            } catch (error) {
+                console.error("Error restoring survey data:", error);
+                localStorage.removeItem(STORAGE_ITEM_KEY); // Remove corrupted data
+            }
+        }
+    }
+
+    function alertResults(sender) {
+        const transformedData = transformSurveyData(sender);
+        console.log("Final Survey Data:", transformedData);
+
+        const response = {
+            title: sender.title,
+            results: transformedData
+        };
+        sendResultsToGoogleAppsScript(response);
+    }
+
+    async function sendResultsToGoogleAppsScript(data) {
+        try {
+            const response = await fetch("https://script.google.com/macros/s/AKfycbwxDXS8XRdv3G-wfL3VmwpbGtxvH82RSmesSUVqPB4Nn7xQUJihPhg4jiAylNzB3S7O/exec", {
+                method: "POST",
+                redirect: "follow",
+                headers: {
+                    "Content-Type": "text/plain;charset=utf-8"
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                alert("Survey results have been successfully saved!");
+            } else {
+                alert("Failed to send survey results. Please try again.");
+            }
+        } catch (error) {
+            console.error("Error sending results to Google Apps Script:", error);
+            alert("An error occurred while sending survey results.");
+        }
+    }
+
+    function transformSurveyData(sender) {
+        const results = sender.data;
+        const transformedData = {};
+
+        sender.getAllQuestions().forEach((question) => {
+            const questionName = question.name;
+            const questionType = question.getType();
+            const exampleKey = questionName.split("_")[0];
+
+            if (!transformedData[exampleKey]) {
+                transformedData[exampleKey] = {};
+            }
+
+            if (questionType === "html") {
+                transformedData[exampleKey]["context"] = question.html;
+            } else {
+                const newKey = questionName.split("_").slice(1).join("_");
+                transformedData[exampleKey][newKey] = results[questionName] || null;
+            }
+        });
+
+        return transformedData;
+    }
+
+    // Save survey data on value change, page change, and before unload
+    survey.onValueChanged.add(saveSurveyData);
+    survey.onCurrentPageChanged.add(saveSurveyData);
+    window.addEventListener("beforeunload", () => saveSurveyData(survey));
+
+    // Handle survey completion
+    survey.onComplete.add((survey) => {
+        survey.setValue("userId", USER_ID);
+        alertResults(survey);
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        survey.render(document.getElementById("surveyContainer"));
+        console.log("Survey rendered.");
+    });
+
+</script>
+</body>
+</html>
