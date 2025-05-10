@@ -105,417 +105,435 @@
                         "visibleIf": "{example1_gpt4_accurate} = 'No'",
                         "title": "If no, what is the correct linguistic explanation?"
                     },
-                    // {
-                    //   "type": "html",
-                    //   "html": "<h3>Example 2</h3><p><strong>Context: </strong><i>In my country, China, although people believe that it is right for cars to comity pedestrians, in fact, there are not many vehicles that can comity pedestrians.</i></p><p><strong>Incorrect:</strong> <code>comity</code></p><p><strong>Correct:</strong> <code>accommodate</code></p><p><strong>Type:</strong> Lexical interference (20%), Lexical error (80%)</p><p><strong>Explanation:</strong> The learner may have borrowed the Chinese concept of 'comity' (礼让) in a way that doesn't translate directly to English 'accommodate' or 'yield', which are more appropriate in this context.</p>"
-                    // },
-                    // {
-                    //   "type": "radiogroup",
-                    //   "name": "example2_plausible",
-                    //   "title": "Q1: Is this a plausible case of L1 interference from Chinese?",
-                    //   "isRequired": true,
-                    //   "choices": [
-                    //     "Yes",
-                    //     {
-                    //       "value": "No",
-                    //       "text": "No (explain why)"
-                    //     }
-                    //   ]
-                    // },
-                    // {
-                    //   "type": "comment",
-                    //   "name": "example2_not_plausible_explanation",
-                    //   "visibleIf": "{example2_plausible} = 'No'",
-                    //   "title": "If no, please explain why:"
-                    // },
-                    // {
-                    //   "type": "radiogroup",
-                    //   "name": "example2_gpt4_accurate",
-                    //   "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
-                    //   "isRequired": true,
-                    //   "choices": [
-                    //     "Yes",
-                    //     {
-                    //       "value": "No",
-                    //       "text": "No (explain why)"
-                    //     }
-                    //   ]
-                    // },
-                    // {
-                    //   "type": "comment",
-                    //   "name": "example2_gpt4_not_accurate_explanation",
-                    //   "visibleIf": "{example1_gpt4_accurate} = 'No'",
-                    //   "title": "If no, what is the correct linguistic explanation?"
-                    // },
-                    // {
-                    //   "type": "html",
-                    //   "html":
-                    //       "<h3>Example 3</h3><p><strong>Context: </strong><i>Talking to the instructors is a bit difficult to me.</i></p><p><strong>Incorrect:</strong> <code>to me</code></p><p><strong>Correct:</strong> <code>for me</code></p><p><strong>Type:</strong> Grammatical interference (100%)</p><p><strong>Explanation:</strong> Chinese learners may confuse 'to' and 'for' in English due to differences in prepositional usage between Chinese and English. The phrase 'to me' is a direct translation from the Chinese structure, which can lead to grammatical interference.</p>"
-                    // },
-                    // {
-                    //   "type": "radiogroup",
-                    //   "name": "example3_plausible",
-                    //   "title": "Q1: Is this a plausible case of L1 interference from Chinese?",
-                    //   "isRequired": true,
-                    //   "choices": [
-                    //     "Yes",
-                    //     {
-                    //       "value": "No",
-                    //       "text": "No (explain why)"
-                    //     }
-                    //   ]
-                    // },
-                    // {
-                    //   "type": "comment",
-                    //   "name": "example3_not_plausible_explanation",
-                    //   "visibleIf": "{example3_plausible} = 'No'",
-                    //   "title": "If no, please explain why:"
-                    // },
-                    // {
-                    //   "type": "radiogroup",
-                    //   "name": "example3_gpt4_accurate",
-                    //   "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
-                    //   "isRequired": true,
-                    //   "choices": [
-                    //     "Yes",
-                    //     {
-                    //       "value": "No",
-                    //       "text": "No (explain why)"
-                    //     }
-                    //   ]
-                    // },
-                    // {
-                    //   "type": "comment",
-                    //   "name": "example3_gpt4_not_accurate_explanation",
-                    //   "visibleIf": "{example1_gpt4_accurate} = 'No'",
-                    //   "title": "If no, what is the correct linguistic explanation?"
-                    // },
-                    // {
-                    //   "type": "html",
-                    //   "html": "<h3>Example 4</h3><p><strong>Context:</strong><i>We create a group chart on What's APP, and create shared notes in the INYO100 folder, we may make a time out of time to talk about our group project.</i> </p><p><strong>Incorrect:</strong> <code>make a time out of time</code></p><p><strong>Correct:</strong> <code>find a suitable time</code></p><p><strong>Type:</strong> Syntactic interference (70%), Lexical error (30%)</p><p><strong>Explanation:</strong> The phrase 'make a time out of time' may reflect a direct translation from a Chinese expression where the concept of 'finding or arranging a time' is expressed differently, leading to syntactic interference.</p>"
-                    // },
-                    // {
-                    //   "type": "radiogroup",
-                    //   "name": "example4_plausible",
-                    //   "title": "Q1: Is this a plausible case of L1 interference from Chinese?",
-                    //   "isRequired": true,
-                    //   "choices": [
-                    //     "Yes",
-                    //     {
-                    //       "value": "No",
-                    //       "text": "No (explain why)"
-                    //     }
-                    //   ]
-                    // },
-                    // {
-                    //   "type": "comment",
-                    //   "name": "example4_not_plausible_explanation",
-                    //   "visibleIf": "{example4_plausible} = 'No'",
-                    //   "title": "If no, please explain why:"
-                    // },
-                    // {
-                    //   "type": "radiogroup",
-                    //   "name": "example4_gpt4_accurate",
-                    //   "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
-                    //   "isRequired": true,
-                    //   "choices": [
-                    //     "Yes",
-                    //     {
-                    //       "value": "No",
-                    //       "text": "No (explain why)"
-                    //     }
-                    //   ]
-                    // },
-                    // {
-                    //   "type": "comment",
-                    //   "name": "example4_gpt4_not_accurate_explanation",
-                    //   "visibleIf": "{example1_gpt4_accurate} = 'No'",
-                    //   "title": "If no, what is the correct linguistic explanation?"
-                    // },
-                    // {
-                    //   "type": "html",
-                    //   "html": "<h3>Example 5</h3><p><strong>Context:</strong> <i>Compared with myself before, I think I have changed a lot and become harder.</i></p><p><strong>Incorrect:</strong> <code>become harder</code></p><p><strong>Correct:</strong> <code>worked harder</code></p><p><strong>Type:</strong> Lexical interference (100%)</p><p><strong>Explanation:</strong> In Chinese, the same word can be used for 'hard' as an adjective and 'harder' as an adverb (努力). This may lead learners to mistakenly use 'become harder' instead of 'worked harder'.</p>"
-                    // },
-                    // {
-                    //   "type": "radiogroup",
-                    //   "name": "example5_plausible",
-                    //   "title": "Q1: Is this a plausible case of L1 interference from Chinese?",
-                    //   "isRequired": true,
-                    //   "choices": [
-                    //     "Yes",
-                    //     {
-                    //       "value": "No",
-                    //       "text": "No (explain why)"
-                    //     }
-                    //   ]
-                    // },
-                    // {
-                    //   "type": "comment",
-                    //   "name": "example5_not_plausible_explanation",
-                    //   "visibleIf": "{example5_plausible} = 'No'",
-                    //   "title": "If no, please explain why:"
-                    // },
-                    // {
-                    //   "type": "radiogroup",
-                    //   "name": "example5_gpt4_accurate",
-                    //   "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
-                    //   "isRequired": true,
-                    //   "choices": [
-                    //     "Yes",
-                    //     {
-                    //       "value": "No",
-                    //       "text": "No (explain why)"
-                    //     }
-                    //   ]
-                    // },
-                    // {
-                    //   "type": "comment",
-                    //   "name": "example5_gpt4_not_accurate_explanation",
-                    //   "visibleIf": "{example1_gpt4_accurate} = 'No'",
-                    //   "title": "If no, what is the correct linguistic explanation?"
-                    // },
-                    // {
-                    //   "type": "html",
-                    //   "html": "<h3>Example 6</h3><p><strong>Context: </strong><i>I in the second day of class, inattention, the next time I want to go to bed early every day, let oneself have enough sleep.</i></p><p><strong>Incorrect:</strong> <code>let oneself have enough sleep</code></p><p><strong>Correct:</strong> <code>let myself have enough sleep</code></p><p><strong>Type:</strong> Syntactic interference (100%)</p><p><strong>Explanation:</strong> Chinese uses reflexive pronouns (自己) differently than English, potentially leading to errors like using 'oneself' instead of 'myself'.</p>"
-                    // },
-                    // {
-                    //   "type": "radiogroup",
-                    //   "name": "example6_plausible",
-                    //   "title": "Q1: Is this a plausible case of L1 interference from Chinese?",
-                    //   "isRequired": true,
-                    //   "choices": [
-                    //     "Yes",
-                    //     {
-                    //       "value": "No",
-                    //       "text": "No (explain why)"
-                    //     }
-                    //   ]
-                    // },
-                    // {
-                    //   "type": "comment",
-                    //   "name": "example6_not_plausible_explanation",
-                    //   "visibleIf": "{example6_plausible} = 'No'",
-                    //   "title": "If no, please explain why:"
-                    // },
-                    // {
-                    //   "type": "radiogroup",
-                    //   "name": "example6_gpt4_accurate",
-                    //   "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
-                    //   "isRequired": true,
-                    //   "choices": [
-                    //     "Yes",
-                    //     {
-                    //       "value": "No",
-                    //       "text": "No (explain why)"
-                    //     }
-                    //   ]
-                    // },
-                    // {
-                    //   "type": "comment",
-                    //   "name": "example6_gpt4_not_accurate_explanation",
-                    //   "visibleIf": "{example1_gpt4_accurate} = 'No'",
-                    //   "title": "If no, what is the correct linguistic explanation?"
-                    // },
-                    // {
-                    //   "type": "html",
-                    //   "html": "<h3>Example 7</h3><p><strong>Context:</strong> <i>I want to know more about GEO office. Because it is related with international students.</i></p><p><strong>Incorrect:</strong> <code>related with</code></p><p><strong>Correct:</strong> <code>related to</code></p><p><strong>Type:</strong> Grammatical interference (70%), Grammatical error (30%)</p><p><strong>Explanation:</strong> In Chinese, the equivalent expression for 'related to' uses a structure that might be translated directly as 'related with,' leading to grammatical interference.</p>"
-                    // },
-                    // {
-                    //   "type": "radiogroup",
-                    //   "name": "example7_plausible",
-                    //   "title": "Q1: Is this a plausible case of L1 interference from Chinese?",
-                    //   "isRequired": true,
-                    //   "choices": [
-                    //     "Yes",
-                    //     {
-                    //       "value": "No",
-                    //       "text": "No (explain why)"
-                    //     }
-                    //   ]
-                    // },
-                    // {
-                    //   "type": "comment",
-                    //   "name": "example7_not_plausible_explanation",
-                    //   "visibleIf": "{example7_plausible} = 'No'",
-                    //   "title": "If no, please explain why:"
-                    // },
-                    // {
-                    //   "type": "radiogroup",
-                    //   "name": "example7_gpt4_accurate",
-                    //   "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
-                    //   "isRequired": true,
-                    //   "choices": [
-                    //     "Yes",
-                    //     {
-                    //       "value": "No",
-                    //       "text": "No (explain why)"
-                    //     }
-                    //   ]
-                    // },
-                    // {
-                    //   "type": "comment",
-                    //   "name": "example7_gpt4_not_accurate_explanation",
-                    //   "visibleIf": "{example1_gpt4_accurate} = 'No'",
-                    //   "title": "If no, what is the correct linguistic explanation?"
-                    // },
-                    // {
-                    //   "type": "html",
-                    //   "html": "<h3>Example 8</h3><p><strong>Context:</strong> <i>I gain a lot of knowledge, how to send emails to professors, if adapt to the learning environment.</i></p><p><strong>Incorrect:</strong> <code>gain</code></p><p><strong>Correct:</strong> <code>gained</code></p><p><strong>Type:</strong> Grammatical error (100%)</p><p><strong>Explanation:</strong> Chinese does not use tense inflection on verbs, potentially leading to errors in English where past tense forms should be used.</p>"
-                    // },
-                    // {
-                    //   "type": "radiogroup",
-                    //   "name": "example8_plausible",
-                    //   "title": "Q1: Is this a plausible case of L1 interference from Chinese?",
-                    //   "isRequired": true,
-                    //   "choices": [
-                    //     "Yes",
-                    //     {
-                    //       "value": "No",
-                    //       "text": "No (explain why)"
-                    //     }
-                    //   ]
-                    // },
-                    // {
-                    //   "type": "comment",
-                    //   "name": "example8_not_plausible_explanation",
-                    //   "visibleIf": "{example8_plausible} = 'No'",
-                    //   "title": "If no, please explain why:"
-                    // },
-                    // {
-                    //   "type": "radiogroup",
-                    //   "name": "example8_gpt4_accurate",
-                    //   "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
-                    //   "isRequired": true,
-                    //   "choices": [
-                    //     "Yes",
-                    //     {
-                    //       "value": "No",
-                    //       "text": "No (explain why)"
-                    //     }
-                    //   ]
-                    // },
-                    // {
-                    //   "type": "comment",
-                    //   "name": "example8_gpt4_not_accurate_explanation",
-                    //   "visibleIf": "{example1_gpt4_accurate} = 'No'",
-                    //   "title": "If no, what is the correct linguistic explanation?"
-                    // },
-                    // {
-                    //   "type": "html",
-                    //   "html": "<h3>Example 9</h3><p><strong>Context:</strong> <i>I have to say that my study attitude has a huge change than in domestic’s. I also positive to take part in group works and join in some activities in leisure.</i></p><p><strong>Incorrect:</strong> <code>a huge change than in domestic’s</code></p><p><strong>Correct:</strong> <code>a huge change compared to domestically</code></p><p><strong>Type:</strong> Syntactic interference (100%)</p><p><strong>Explanation:</strong> The structure 'than in domestic's' reflects Chinese syntax and word usage, leading to incorrect comparative constructions in English.</p>"
-                    // },
-                    // {
-                    //   "type": "radiogroup",
-                    //   "name": "example9_plausible",
-                    //   "title": "Q1: Is this a plausible case of L1 interference from Chinese?",
-                    //   "isRequired": true,
-                    //   "choices": [
-                    //     "Yes",
-                    //     {
-                    //       "value": "No",
-                    //       "text": "No (explain why)"
-                    //     }
-                    //   ]
-                    // },
-                    // {
-                    //   "type": "comment",
-                    //   "name": "example9_not_plausible_explanation",
-                    //   "visibleIf": "{example9_plausible} = 'No'",
-                    //   "title": "If no, please explain why:"
-                    // },
-                    // {
-                    //   "type": "radiogroup",
-                    //   "name": "example9_gpt4_accurate",
-                    //   "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
-                    //   "isRequired": true,
-                    //   "choices": [
-                    //     "Yes",
-                    //     {
-                    //       "value": "No",
-                    //       "text": "No (explain why)"
-                    //     }
-                    //   ]
-                    // },
-                    // {
-                    //   "type": "comment",
-                    //   "name": "example9_gpt4_not_accurate_explanation",
-                    //   "visibleIf": "{example1_gpt4_accurate} = 'No'",
-                    //   "title": "If no, what is the correct linguistic explanation?"
-                    // },
-                    // {
-                    //   "type": "html",
-                    //   "html": "<h3>Example 10</h3><p><strong>Context:</strong> <i>I want to know about the organization on the Kiosk, I think it was so many different organizations on here, maybe I will find one to get to know.</i></p><p><strong>Incorrect:</strong> <code>on</code></p><p><strong>Correct:</strong> <code>in</code></p><p><strong>Type:</strong> Grammatical interference (70%), Lexical error (30%)</p><p><strong>Explanation:</strong> In Chinese, prepositions do not always map directly to English equivalents, leading to errors like using 'on' instead of 'in'.</p>"
-                    // },
-                    // {
-                    //   "type": "radiogroup",
-                    //   "name": "example10_plausible",
-                    //   "title": "Q1: Is this a plausible case of L1 interference from Chinese?",
-                    //   "isRequired": true,
-                    //   "choices": [
-                    //     "Yes",
-                    //     {
-                    //       "value": "No",
-                    //       "text": "No (explain why)"
-                    //     }
-                    //   ]
-                    // },
-                    // {
-                    //   "type": "comment",
-                    //   "name": "example10_not_plausible_explanation",
-                    //   "visibleIf": "{example10_plausible} = 'No'",
-                    //   "title": "If no, please explain why:"
-                    // },
-                    // {
-                    //   "type": "radiogroup",
-                    //   "name": "example10_gpt4_accurate",
-                    //   "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
-                    //   "isRequired": true,
-                    //   "choices": [
-                    //     "Yes",
-                    //     {
-                    //       "value": "No",
-                    //       "text": "No (explain why)"
-                    //     }
-                    //   ]
-                    // },
-                    // {
-                    //   "type": "comment",
-                    //   "name": "example10_gpt4_not_accurate_explanation",
-                    //   "visibleIf": "{example1_gpt4_accurate} = 'No'",
-                    //   "title": "If no, what is the correct linguistic explanation?"
-                    // }
+                    {
+                      "type": "html",
+                      "html": "<h3>Example 2</h3><p><strong>Context: </strong><i>In my country, China, although people believe that it is right for cars to comity pedestrians, in fact, there are not many vehicles that can comity pedestrians.</i></p><p><strong>Incorrect:</strong> <code>comity</code></p><p><strong>Correct:</strong> <code>accommodate</code></p><p><strong>Type:</strong> Lexical interference (20%), Lexical error (80%)</p><p><strong>Explanation:</strong> The learner may have borrowed the Chinese concept of 'comity' (礼让) in a way that doesn't translate directly to English 'accommodate' or 'yield', which are more appropriate in this context.</p>"
+                    },
+                    {
+                      "type": "radiogroup",
+                      "name": "example2_plausible",
+                      "title": "Q1: Is this a plausible case of L1 interference from Chinese?",
+                      "isRequired": true,
+                      "choices": [
+                        "Yes",
+                        {
+                          "value": "No",
+                          "text": "No (explain why)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "comment",
+                      "name": "example2_not_plausible_explanation",
+                      "visibleIf": "{example2_plausible} = 'No'",
+                      "title": "If no, please explain why:"
+                    },
+                    {
+                      "type": "radiogroup",
+                      "name": "example2_gpt4_accurate",
+                      "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
+                      "isRequired": true,
+                      "choices": [
+                        "Yes",
+                        {
+                          "value": "No",
+                          "text": "No (explain why)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "comment",
+                      "name": "example2_gpt4_not_accurate_explanation",
+                      "visibleIf": "{example2_gpt4_accurate} = 'No'",
+                      "title": "If no, what is the correct linguistic explanation?"
+                    },
+                    {
+                      "type": "html",
+                      "html":
+                          "<h3>Example 3</h3><p><strong>Context: </strong><i>Talking to the instructors is a bit difficult to me.</i></p><p><strong>Incorrect:</strong> <code>to me</code></p><p><strong>Correct:</strong> <code>for me</code></p><p><strong>Type:</strong> Grammatical interference (100%)</p><p><strong>Explanation:</strong> Chinese learners may confuse 'to' and 'for' in English due to differences in prepositional usage between Chinese and English. The phrase 'to me' is a direct translation from the Chinese structure, which can lead to grammatical interference.</p>"
+                    },
+                    {
+                      "type": "radiogroup",
+                      "name": "example3_plausible",
+                      "title": "Q1: Is this a plausible case of L1 interference from Chinese?",
+                      "isRequired": true,
+                      "choices": [
+                        "Yes",
+                        {
+                          "value": "No",
+                          "text": "No (explain why)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "comment",
+                      "name": "example3_not_plausible_explanation",
+                      "visibleIf": "{example3_plausible} = 'No'",
+                      "title": "If no, please explain why:"
+                    },
+                    {
+                      "type": "radiogroup",
+                      "name": "example3_gpt4_accurate",
+                      "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
+                      "isRequired": true,
+                      "choices": [
+                        "Yes",
+                        {
+                          "value": "No",
+                          "text": "No (explain why)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "comment",
+                      "name": "example3_gpt4_not_accurate_explanation",
+                      "visibleIf": "{example3_gpt4_accurate} = 'No'",
+                      "title": "If no, what is the correct linguistic explanation?"
+                    },
+                    {
+                      "type": "html",
+                      "html": "<h3>Example 4</h3><p><strong>Context:</strong><i>We create a group chart on What's APP, and create shared notes in the INYO100 folder, we may make a time out of time to talk about our group project.</i> </p><p><strong>Incorrect:</strong> <code>make a time out of time</code></p><p><strong>Correct:</strong> <code>find a suitable time</code></p><p><strong>Type:</strong> Syntactic interference (70%), Lexical error (30%)</p><p><strong>Explanation:</strong> The phrase 'make a time out of time' may reflect a direct translation from a Chinese expression where the concept of 'finding or arranging a time' is expressed differently, leading to syntactic interference.</p>"
+                    },
+                    {
+                      "type": "radiogroup",
+                      "name": "example4_plausible",
+                      "title": "Q1: Is this a plausible case of L1 interference from Chinese?",
+                      "isRequired": true,
+                      "choices": [
+                        "Yes",
+                        {
+                          "value": "No",
+                          "text": "No (explain why)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "comment",
+                      "name": "example4_not_plausible_explanation",
+                      "visibleIf": "{example4_plausible} = 'No'",
+                      "title": "If no, please explain why:"
+                    },
+                    {
+                      "type": "radiogroup",
+                      "name": "example4_gpt4_accurate",
+                      "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
+                      "isRequired": true,
+                      "choices": [
+                        "Yes",
+                        {
+                          "value": "No",
+                          "text": "No (explain why)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "comment",
+                      "name": "example4_gpt4_not_accurate_explanation",
+                      "visibleIf": "{example4_gpt4_accurate} = 'No'",
+                      "title": "If no, what is the correct linguistic explanation?"
+                    },
+                    {
+                      "type": "html",
+                      "html": "<h3>Example 5</h3><p><strong>Context:</strong> <i>Compared with myself before, I think I have changed a lot and become harder.</i></p><p><strong>Incorrect:</strong> <code>become harder</code></p><p><strong>Correct:</strong> <code>worked harder</code></p><p><strong>Type:</strong> Lexical interference (100%)</p><p><strong>Explanation:</strong> In Chinese, the same word can be used for 'hard' as an adjective and 'harder' as an adverb (努力). This may lead learners to mistakenly use 'become harder' instead of 'worked harder'.</p>"
+                    },
+                    {
+                      "type": "radiogroup",
+                      "name": "example5_plausible",
+                      "title": "Q1: Is this a plausible case of L1 interference from Chinese?",
+                      "isRequired": true,
+                      "choices": [
+                        "Yes",
+                        {
+                          "value": "No",
+                          "text": "No (explain why)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "comment",
+                      "name": "example5_not_plausible_explanation",
+                      "visibleIf": "{example5_plausible} = 'No'",
+                      "title": "If no, please explain why:"
+                    },
+                    {
+                      "type": "radiogroup",
+                      "name": "example5_gpt4_accurate",
+                      "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
+                      "isRequired": true,
+                      "choices": [
+                        "Yes",
+                        {
+                          "value": "No",
+                          "text": "No (explain why)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "comment",
+                      "name": "example5_gpt4_not_accurate_explanation",
+                      "visibleIf": "{example5_gpt4_accurate} = 'No'",
+                      "title": "If no, what is the correct linguistic explanation?"
+                    },
+                    {
+                      "type": "html",
+                      "html": "<h3>Example 6</h3><p><strong>Context: </strong><i>I in the second day of class, inattention, the next time I want to go to bed early every day, let oneself have enough sleep.</i></p><p><strong>Incorrect:</strong> <code>let oneself have enough sleep</code></p><p><strong>Correct:</strong> <code>let myself have enough sleep</code></p><p><strong>Type:</strong> Syntactic interference (100%)</p><p><strong>Explanation:</strong> Chinese uses reflexive pronouns (自己) differently than English, potentially leading to errors like using 'oneself' instead of 'myself'.</p>"
+                    },
+                    {
+                      "type": "radiogroup",
+                      "name": "example6_plausible",
+                      "title": "Q1: Is this a plausible case of L1 interference from Chinese?",
+                      "isRequired": true,
+                      "choices": [
+                        "Yes",
+                        {
+                          "value": "No",
+                          "text": "No (explain why)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "comment",
+                      "name": "example6_not_plausible_explanation",
+                      "visibleIf": "{example6_plausible} = 'No'",
+                      "title": "If no, please explain why:"
+                    },
+                    {
+                      "type": "radiogroup",
+                      "name": "example6_gpt4_accurate",
+                      "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
+                      "isRequired": true,
+                      "choices": [
+                        "Yes",
+                        {
+                          "value": "No",
+                          "text": "No (explain why)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "comment",
+                      "name": "example6_gpt4_not_accurate_explanation",
+                      "visibleIf": "{example6_gpt4_accurate} = 'No'",
+                      "title": "If no, what is the correct linguistic explanation?"
+                    },
+                    {
+                      "type": "html",
+                      "html": "<h3>Example 7</h3><p><strong>Context:</strong> <i>I want to know more about GEO office. Because it is related with international students.</i></p><p><strong>Incorrect:</strong> <code>related with</code></p><p><strong>Correct:</strong> <code>related to</code></p><p><strong>Type:</strong> Grammatical interference (70%), Grammatical error (30%)</p><p><strong>Explanation:</strong> In Chinese, the equivalent expression for 'related to' uses a structure that might be translated directly as 'related with,' leading to grammatical interference.</p>"
+                    },
+                    {
+                      "type": "radiogroup",
+                      "name": "example7_plausible",
+                      "title": "Q1: Is this a plausible case of L1 interference from Chinese?",
+                      "isRequired": true,
+                      "choices": [
+                        "Yes",
+                        {
+                          "value": "No",
+                          "text": "No (explain why)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "comment",
+                      "name": "example7_not_plausible_explanation",
+                      "visibleIf": "{example7_plausible} = 'No'",
+                      "title": "If no, please explain why:"
+                    },
+                    {
+                      "type": "radiogroup",
+                      "name": "example7_gpt4_accurate",
+                      "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
+                      "isRequired": true,
+                      "choices": [
+                        "Yes",
+                        {
+                          "value": "No",
+                          "text": "No (explain why)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "comment",
+                      "name": "example7_gpt4_not_accurate_explanation",
+                      "visibleIf": "{example7_gpt4_accurate} = 'No'",
+                      "title": "If no, what is the correct linguistic explanation?"
+                    },
+                    {
+                      "type": "html",
+                      "html": "<h3>Example 8</h3><p><strong>Context:</strong> <i>I gain a lot of knowledge, how to send emails to professors, if adapt to the learning environment.</i></p><p><strong>Incorrect:</strong> <code>gain</code></p><p><strong>Correct:</strong> <code>gained</code></p><p><strong>Type:</strong> Grammatical error (100%)</p><p><strong>Explanation:</strong> Chinese does not use tense inflection on verbs, potentially leading to errors in English where past tense forms should be used.</p>"
+                    },
+                    {
+                      "type": "radiogroup",
+                      "name": "example8_plausible",
+                      "title": "Q1: Is this a plausible case of L1 interference from Chinese?",
+                      "isRequired": true,
+                      "choices": [
+                        "Yes",
+                        {
+                          "value": "No",
+                          "text": "No (explain why)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "comment",
+                      "name": "example8_not_plausible_explanation",
+                      "visibleIf": "{example8_plausible} = 'No'",
+                      "title": "If no, please explain why:"
+                    },
+                    {
+                      "type": "radiogroup",
+                      "name": "example8_gpt4_accurate",
+                      "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
+                      "isRequired": true,
+                      "choices": [
+                        "Yes",
+                        {
+                          "value": "No",
+                          "text": "No (explain why)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "comment",
+                      "name": "example8_gpt4_not_accurate_explanation",
+                      "visibleIf": "{example8_gpt4_accurate} = 'No'",
+                      "title": "If no, what is the correct linguistic explanation?"
+                    },
+                    {
+                      "type": "html",
+                      "html": "<h3>Example 9</h3><p><strong>Context:</strong> <i>I have to say that my study attitude has a huge change than in domestic’s. I also positive to take part in group works and join in some activities in leisure.</i></p><p><strong>Incorrect:</strong> <code>a huge change than in domestic’s</code></p><p><strong>Correct:</strong> <code>a huge change compared to domestically</code></p><p><strong>Type:</strong> Syntactic interference (100%)</p><p><strong>Explanation:</strong> The structure 'than in domestic's' reflects Chinese syntax and word usage, leading to incorrect comparative constructions in English.</p>"
+                    },
+                    {
+                      "type": "radiogroup",
+                      "name": "example9_plausible",
+                      "title": "Q1: Is this a plausible case of L1 interference from Chinese?",
+                      "isRequired": true,
+                      "choices": [
+                        "Yes",
+                        {
+                          "value": "No",
+                          "text": "No (explain why)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "comment",
+                      "name": "example9_not_plausible_explanation",
+                      "visibleIf": "{example9_plausible} = 'No'",
+                      "title": "If no, please explain why:"
+                    },
+                    {
+                      "type": "radiogroup",
+                      "name": "example9_gpt4_accurate",
+                      "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
+                      "isRequired": true,
+                      "choices": [
+                        "Yes",
+                        {
+                          "value": "No",
+                          "text": "No (explain why)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "comment",
+                      "name": "example9_gpt4_not_accurate_explanation",
+                      "visibleIf": "{example9_gpt4_accurate} = 'No'",
+                      "title": "If no, what is the correct linguistic explanation?"
+                    },
+                    {
+                      "type": "html",
+                      "html": "<h3>Example 10</h3><p><strong>Context:</strong> <i>I want to know about the organization on the Kiosk, I think it was so many different organizations on here, maybe I will find one to get to know.</i></p><p><strong>Incorrect:</strong> <code>on</code></p><p><strong>Correct:</strong> <code>in</code></p><p><strong>Type:</strong> Grammatical interference (70%), Lexical error (30%)</p><p><strong>Explanation:</strong> In Chinese, prepositions do not always map directly to English equivalents, leading to errors like using 'on' instead of 'in'.</p>"
+                    },
+                    {
+                      "type": "radiogroup",
+                      "name": "example10_plausible",
+                      "title": "Q1: Is this a plausible case of L1 interference from Chinese?",
+                      "isRequired": true,
+                      "choices": [
+                        "Yes",
+                        {
+                          "value": "No",
+                          "text": "No (explain why)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "comment",
+                      "name": "example10_not_plausible_explanation",
+                      "visibleIf": "{example10_plausible} = 'No'",
+                      "title": "If no, please explain why:"
+                    },
+                    {
+                      "type": "radiogroup",
+                      "name": "example10_gpt4_accurate",
+                      "title": "Q2: Is GPT-4's explanation of the L1 influence accurate?",
+                      "isRequired": true,
+                      "choices": [
+                        "Yes",
+                        {
+                          "value": "No",
+                          "text": "No (explain why)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "comment",
+                      "name": "example10_gpt4_not_accurate_explanation",
+                      "visibleIf": "{example10_gpt4_accurate} = 'No'",
+                      "title": "If no, what is the correct linguistic explanation?"
+                    }
                 ]
             }
         ]
     };
+    const STORAGE_ITEM_KEY = "my-survey";
+    const USER_ID = localStorage.getItem("userId") || "guest-user";
     const survey = new Survey.Model(surveyJson);
+    restoreSurveyData(survey);
+    survey.setValue("userId", USER_ID);
 
-    function transformSurveyData(sender) {
-        const results = sender.data;
-        const transformedData = {};
-
-        sender.getAllQuestions().forEach((question) => {
-            const questionName = question.name;
-            const questionType = question.getType();
-            const exampleKey = questionName.split("_")[0]; // Extract example prefix (e.g., "example1")
-
-            if (!transformedData[exampleKey]) {
-                transformedData[exampleKey] = {};
-            }
-
-            if (questionType === "html") {
-                // Add the HTML content under the example dictionary
-                transformedData[exampleKey]["context"] = question.html;
-            } else {
-                // Add other question details
-                const newKey = questionName.split("_").slice(1).join("_"); // Remove the example prefix
-                transformedData[exampleKey][newKey] = results[questionName] || null;
-            }
-        });
-
-        return transformedData;
+    function saveSurveyData(survey) {
+        const data = survey.data;
+        data.pageNo = survey.currentPageNo;
+        try {
+            window.localStorage.setItem(STORAGE_ITEM_KEY, JSON.stringify(data));
+            console.log("Survey data saved locally.");
+        } catch (error) {
+            console.error("Error saving survey data:", error);
+        }
     }
 
+    function restoreSurveyData(survey) {
+        const prevData = window.localStorage.getItem(STORAGE_ITEM_KEY);
+        if (prevData) {
+            try {
+                const data = JSON.parse(prevData);
+                if (data) {
+                    survey.data = data;
+                    if (data.pageNo) {
+                        survey.currentPageNo = data.pageNo;
+                    }
+                    console.log("Survey data restored.");
+                }
+            } catch (error) {
+                console.error("Error restoring survey data:", error);
+                localStorage.removeItem(STORAGE_ITEM_KEY); // Remove corrupted data
+            }
+        }
+    }
+
+    function alertResults(sender) {
+        const transformedData = transformSurveyData(sender);
+        console.log("Final Survey Data:", transformedData);
+
+        const response = {
+            title: sender.title,
+            results: transformedData
+        };
+        sendResultsToGoogleAppsScript(response);
+    }
 
     async function sendResultsToGoogleAppsScript(data) {
         try {
@@ -539,27 +557,46 @@
         }
     }
 
-    function alertResults(sender) {
-        const transformedData = transformSurveyData(sender);
-        console.log(transformedData);
-        // const results = sender.data;
-        const surveyTitle = sender.title; // Get the survey title
+    function transformSurveyData(sender) {
+        const results = sender.data;
+        const transformedData = {};
 
-        // Include the title in the response
-        const response = {
-            title: surveyTitle,
-            results: transformedData
-        };
+        sender.getAllQuestions().forEach((question) => {
+            const questionName = question.name;
+            const questionType = question.getType();
+            const exampleKey = questionName.split("_")[0];
 
-        // alert(JSON.stringify(response));
-        sendResultsToGoogleAppsScript(response);
+            if (!transformedData[exampleKey]) {
+                transformedData[exampleKey] = {};
+            }
+
+            if (questionType === "html") {
+                transformedData[exampleKey]["context"] = question.html;
+            } else {
+                const newKey = questionName.split("_").slice(1).join("_");
+                transformedData[exampleKey][newKey] = results[questionName] || null;
+            }
+        });
+
+        return transformedData;
     }
 
-    survey.onComplete.add(alertResults);
+    // Save survey data on value change, page change, and before unload
+    survey.onValueChanged.add(saveSurveyData);
+    survey.onCurrentPageChanged.add(saveSurveyData);
+    window.addEventListener("beforeunload", () => saveSurveyData(survey));
+
+    // Handle survey completion
+    survey.onComplete.add((survey) => {
+        survey.setValue("userId", USER_ID);
+        alertResults(survey);
+    });
 
     document.addEventListener("DOMContentLoaded", function () {
         survey.render(document.getElementById("surveyContainer"));
+        console.log("Survey rendered.");
     });
+
 </script>
 </body>
 </html>
