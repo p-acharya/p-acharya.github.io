@@ -5,32 +5,52 @@ permalink: /research/
 author_profile: true
 ---
 
-My research asks how computational models can help explain language learning and processing, rather than only optimize text prediction. I am interested in learner language, human sentence processing, and multilingual NLP, especially where linguistic theory, cognitive plausibility, and model evaluation intersect.
+My research studies how computational models can help explain language learning and processing, rather than only optimize text prediction. I work at the intersection of learner language, human sentence processing, and multilingual NLP, with a focus on cognitively grounded modeling, behavioral evaluation, and language technology.
 
 I am currently a PhD student in Computer Science at George Mason University, advised by [Antonios Anastasopoulos](https://antonisa.github.io/).
 
-## Main Research Themes
+## Research Areas
 
-### Learner language and second language acquisition
+My work centers on second-language acquisition, human-grounded model evaluation, and multilingual language technology.
 
-I study how second-language learners acquire and generalize linguistic structure, with particular attention to how the first language shapes learner production. This includes corpus creation, annotation, and computational analysis of learner English.
+I study how second-language learners acquire and generalize linguistic structure, especially how the first language shapes learner production over time. This includes corpus creation, annotation, and computational analysis of learner English.
 
-### Human language processing and behavioral grounding
+I am also interested in linking computational predictors of difficulty and structure to human behavioral data, with the broader goal of understanding what makes a model informative about human language processing.
 
-I am interested in linking computational predictors of difficulty and structure to human behavioral data, with the broader goal of understanding what makes a model informative about human language processing.
+A third line of my work explores language technology for pedagogy and multilingual settings, including controllable generation, low-resource machine translation, dependency parsing, and structure-aware evaluation across scripts and languages.
 
-### Pedagogically constrained generation and language technology
+## Selected Work
 
-My work also explores how language technologies can be made more pedagogically useful, including controllable generation systems that satisfy explicit instructional constraints and can be evaluated for both linguistic and pedagogical validity.
+### Tracing L1 interference in English learner writing
+**EMNLP 2025**
 
-At ETH Zurich (Summer 2025), I worked as a visiting researcher advised by Mrinmaya Sachan and Ryan Cotterell on controllable generation for language pedagogy. This work modeled lesson goals as explicit constraints (target constructions, proficiency level, vocabulary limits) and evaluated outputs for both linguistic correctness and pedagogical fit.
+A longitudinal learner corpus with error annotations for studying native-language transfer in learner English and evaluating whether language models reproduce these effects in principled ways.
 
-### Multilingual and structure-aware NLP
+### Controlled generation for language pedagogy
+**ETH Zurich**
 
-Across research settings, I have worked on multilingual and low-resource NLP, including machine translation, dependency parsing, and structure-aware evaluation for Chinese character modeling.
+Worked on controllable pedagogical text generation, modeling lesson goals as explicit constraints such as target constructions, proficiency level, and vocabulary limits, and evaluating outputs for linguistic correctness and pedagogical fit.
 
-Through the National Language Translation Mission, I developed low-resource NMT strategies for Indian languages and worked on an interpretable MT framework for Hindi, Kannada, and Sanskrit using a Paninian-style interlingua. I also designed a joint Hindi-Kannada neural dependency parser using Trankit.
+### Structure-aware evaluation for Chinese character modeling
+**ETH Zurich**
 
-## Methods and Technical Approach
+Proposed an evaluation suite for testing sub-character knowledge with tasks and metrics that go beyond word-level semantics.
 
-My work combines corpus design, annotation, probabilistic and neural modeling, behavioral evaluation, and multilingual analysis. I work across Python-based NLP tooling, deep learning frameworks, and research-oriented experimental design, with additional experience in production systems and scalable data infrastructure.
+### Low-resource and interpretable machine translation for Indian languages
+**National Language Translation Mission**
+
+Worked on low-resource NMT for Indian languages, an interpretable MT framework for Hindi, Kannada, and Sanskrit, and a joint Hindi-Kannada neural dependency parser.
+
+### Multiscript dictionary OCR
+**Independent project**
+
+Designed a multilingual OCR web application for recognizing text in images and supporting dictionary search across scripts.
+
+### Production-grade data systems and infrastructure
+**Industry**
+
+Built and maintained large-scale data platforms, distributed pipelines, and real-time systems in industrial manufacturing and healthcare.
+
+## Methods
+
+My work combines corpus design, annotation, probabilistic and neural modeling, behavioral evaluation, and multilingual analysis, alongside experience with production systems and scalable data infrastructure.
