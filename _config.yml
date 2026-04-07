@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Poorvi Acharya"
 title_separator          : "-"
 name                     : &name "Poorvi Acharya"
-description              : &description "personal description"
+description              : &description "Computational psycholinguistics, language acquisition, and NLP research connecting human learning and model behavior."
 url                      : https://p-acharya.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "p-acharya/p-acharya.github.io"
@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "Poorvi Acharya"
   avatar           : "profile.png"
-  bio              : #"Your biography for the left-hand sidebar"
-  location         : "New York City, NY"
+  bio              : "I study how humans and language models learn, process, and generalize language."
+  location         : "Fairfax, VA"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : #"http://yourfullgooglescholarurl.com"
-  email            :
+  email            : "poorvi.acharya@gmail.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -102,7 +102,7 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "poorvi-acharya"
+  linkedin         : "poorvi-acharya-824839118"
   orcid            : #"http://orcid.org/yourorcidurl"
   pinterest        :
   soundcloud       :
