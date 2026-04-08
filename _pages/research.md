@@ -5,19 +5,15 @@ permalink: /research/
 author_profile: true
 ---
 
-My research studies how computational models can help explain language learning and processing, rather than only optimize text prediction. I work at the intersection of learner language, human sentence processing, and multilingual NLP, with a focus on cognitively grounded modeling, behavioral evaluation, and language technology.
+My research studies how computational models can help explain language learning and processing, rather than only optimize text prediction. I work at the intersection of learner language, human sentence processing, and multilingual NLP.
 
 I am currently a PhD student in Computer Science at George Mason University, advised by [Antonios Anastasopoulos](https://antonisa.github.io/).
 
 ## Research Areas
 
-My work centers on second-language acquisition, human-grounded model evaluation, and multilingual language technology.
+My work focuses on second-language acquisition, human-grounded model evaluation, and multilingual language technology.
 
-I study how second-language learners acquire and generalize linguistic structure, especially how the first language shapes learner production over time. This includes corpus creation, annotation, and computational analysis of learner English.
-
-I am also interested in linking computational predictors of difficulty and structure to human behavioral data, with the broader goal of understanding what makes a model informative about human language processing.
-
-A third line of my work explores language technology for pedagogy and multilingual settings, including controllable generation, low-resource machine translation, dependency parsing, and structure-aware evaluation across scripts and languages.
+I study how second-language learners acquire and generalize linguistic structure, especially how the first language shapes learner production over time. I also investigate how computational predictors of difficulty and structure relate to human behavioral data, and I work on language technology for pedagogy and multilingual settings, including controllable generation, machine translation, dependency parsing, and structure-aware evaluation across scripts and languages.
 
 ## Selected Work
 
@@ -50,7 +46,3 @@ Designed a multilingual OCR web application for recognizing text in images and s
 **Industry**
 
 Built and maintained large-scale data platforms, distributed pipelines, and real-time systems in industrial manufacturing and healthcare.
-
-## Methods
-
-My work combines corpus design, annotation, probabilistic and neural modeling, behavioral evaluation, and multilingual analysis, alongside experience with production systems and scalable data infrastructure.
