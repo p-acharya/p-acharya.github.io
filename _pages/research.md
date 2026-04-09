@@ -19,12 +19,12 @@ I study how second-language learners acquire and generalize linguistic structure
 A longitudinal learner corpus with error annotations for studying native-language transfer in learner English and evaluating whether language models reproduce these effects in principled ways.
 
 ### Controlled generation for language pedagogy
-**ETH Zurich**
+**ETH Zürich**
 
 Worked on controllable pedagogical text generation, modeling lesson goals as explicit constraints such as target constructions, proficiency level, and vocabulary limits, and evaluating outputs for linguistic correctness and pedagogical fit.
 
 ### Structure-aware evaluation for Chinese character modeling
-**ETH Zurich**
+**ETH Zürich**
 
 Proposed an evaluation suite for testing sub-character knowledge with tasks and metrics that go beyond word-level semantics.
 
