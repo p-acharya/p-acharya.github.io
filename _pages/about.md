@@ -17,9 +17,7 @@ Outside of research, I enjoy learning languages, playing the violin, and, more r
 
 ## News
 
-{% for item in site.data.news %}
-- **{{ item.date }}**: {% if item.url %}[{{ item.text }}]({{ item.url }}){% else %}{{ item.text }}{% endif %}
-{% endfor %}
+{% include news.md %}
 
 ---
 
@@ -33,6 +31,6 @@ Outside of research, I enjoy learning languages, playing the violin, and, more r
   </a>
   <a href="https://www.linkedin.com/in/poorvi-acharya-824839118/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
   <a href="https://github.com/p-acharya" title="GitHub"><i class="fab fa-github"></i></a>
-  <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+  <a href="https://scholar.google.com/citations?hl=en&user=NPvy2gIAAAAJ" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
   <a class="location-icon" href="https://www.google.com/maps/place/Fairfax,+VA" title="Fairfax, VA" target="_blank" rel="noopener noreferrer"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></a>
 </div>
