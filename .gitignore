@@ -1,2 +1,9 @@
+.DS_Store
+.idea/
+.jekyll-cache/
 _site/
-
+.sass-cache/
+.bundle/
+vendor/
+node_modules/
+personal-website-2/
