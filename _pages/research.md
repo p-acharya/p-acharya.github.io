@@ -5,40 +5,42 @@ permalink: /research/
 author_profile: true
 ---
 
-My research focuses on learner language, human sentence processing, and multilingual NLP. I am especially interested in second-language acquisition, human-grounded model evaluation, and language technology for multilingual and pedagogical settings.
+<section class="research-page" aria-label="Research portfolio">
+  <main class="page">
+    <header class="intro">
+      <p class="eyebrow">Research</p>
+      <h1>How experience with one language reshapes the mind&apos;s grip on another.</h1>
+      <p>
+        I work at the intersection of computational linguistics and
+        psycholinguistics, asking how bilingual readers parse, infer, and err.
+        Three threads run through my work. Each pairs careful experimental design
+        with scalable computational tools.
+      </p>
+    </header>
 
-## Research Areas
+    <hr class="rule" />
 
-I study how second-language learners acquire and generalize linguistic structure, especially how the first language shapes learner production over time. I also investigate how computational predictors of difficulty and structure relate to human behavioral data. More broadly, I work on language technology for multilingual and pedagogical settings, including controllable generation, machine translation, dependency parsing, and structure-aware evaluation across scripts and languages.
+    <section aria-label="Featured research project">
+      {% for p in site.data.research.projects %}{% if p.featured %}
+        {% include research/project-card.html project=p %}
+      {% endif %}{% endfor %}
+    </section>
 
-## Selected Work
+    <section aria-label="Additional research projects" class="grid-2">
+      {% for p in site.data.research.projects %}{% unless p.featured %}
+        {% include research/project-card.html project=p %}
+      {% endunless %}{% endfor %}
+    </section>
 
-### Tracing L1 interference in English learner writing
-**EMNLP 2025**
-
-A longitudinal learner corpus with error annotations for studying native-language transfer in learner English and evaluating whether language models reproduce these effects in principled ways.
-
-### Controlled generation for language pedagogy
-**ETH Zürich**
-
-Worked on controllable pedagogical text generation, modeling lesson goals as explicit constraints such as target constructions, proficiency level, and vocabulary limits, and evaluating outputs for linguistic correctness and pedagogical fit.
-
-### Structure-aware evaluation for Chinese character modeling
-**ETH Zürich**
-
-Proposed an evaluation suite for testing sub-character knowledge with tasks and metrics that go beyond word-level semantics.
-
-### Low-resource and interpretable machine translation for Indian languages
-**National Language Translation Mission**
-
-Worked on low-resource NMT for Indian languages, an interpretable MT framework for Hindi, Kannada, and Sanskrit, and a joint Hindi-Kannada neural dependency parser.
-
-### Multiscript dictionary OCR
-**Independent project**
-
-Designed a multilingual OCR web application for recognizing text in images and supporting dictionary search across scripts.
-
-### Production-grade data systems and infrastructure
-**Industry**
-
-Built and maintained large-scale data platforms, distributed pipelines, and real-time systems in industrial manufacturing and healthcare.
+    <div class="footer-link">
+      <a href="/publications/">
+        See Publications for citable papers and links
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </main>
+</section>

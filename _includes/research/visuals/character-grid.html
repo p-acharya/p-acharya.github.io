@@ -1,0 +1,24 @@
+<div class="charwall">
+  {% for c in site.data.research.characters %}
+  <div class="charcell">
+    <div class="charcell__top">
+      <span class="charcell__char" lang="zh">{{ c.char }}</span>
+      <span>
+        <span class="charcell__pinyin">{{ c.pinyin }}</span>
+        <span class="charcell__gloss">{{ c.gloss }}</span>
+      </span>
+    </div>
+    <div class="charcell__parts">
+      <span class="part part--sem">
+        <span class="part__glyph" lang="zh">{{ c.sem_part }}</span>
+        <span class="part__label">{{ c.sem_meaning }}</span>
+      </span>
+      <span class="part__plus">+</span>
+      <span class="part part--pho">
+        <span class="part__glyph" lang="zh">{{ c.pho_part }}</span>
+        <span class="part__label">{{ c.pho_sound }}</span>
+      </span>
+    </div>
+  </div>
+  {% endfor %}
+</div>

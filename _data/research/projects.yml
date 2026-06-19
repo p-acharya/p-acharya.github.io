@@ -1,0 +1,32 @@
+# Project data drives the card grid. Each `visual` maps to an include
+# in _includes/research/visuals/<visual>.html
+
+- index: "01"
+  accent: p1
+  featured: true
+  venue: TACL
+  affiliation: "In preparation · MIT CPL Lab"
+  title: "Does Experience with One Language Change How Another Is Parsed?"
+  hook: "Proficient L2 readers persistently struggle at the syntax-discourse interface. Is this from limited exposure, memory constraints, or L1 transfer?"
+  visual: syntax-tree
+  href: "/publications/"
+
+- index: "02"
+  accent: p2
+  featured: false
+  venue: MME Workshop
+  affiliation: "EACL 2026 · ETH Zürich"
+  title: "Learning to Infer, Not Just Memorize, Chinese Vocabulary"
+  hook: "Native Chinese speakers use radical awareness to infer thousands of unfamiliar words. Most L2 learners never develop this because curricula do not systematically build it."
+  visual: character-grid
+  href: "/publications/"
+
+- index: "03"
+  accent: p3
+  featured: false
+  venue: EMNLP 2025
+  affiliation: "George Mason University"
+  title: "Persistent L1 Influence in L2 Writing"
+  hook: "L1 transfer is one of the most persistent obstacles in language learning, yet large-scale computational tools to detect it are lacking."
+  visual: error-json
+  href: "/publications/"
