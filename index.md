@@ -19,8 +19,8 @@ permalink: /
       </h1>
       <p class="hero__lede">
         My work connects cognitive science, second language acquisition, and
-        machine learning to build human-grounded models of language behavior —
-        and better ways to evaluate language technology.
+        machine learning to build human-grounded models of language behavior
+        while improving how we evaluate language technology.
       </p>
       <div class="hero__cta">
         <a class="btn-primary" href="{{ '/research/' | relative_url }}">

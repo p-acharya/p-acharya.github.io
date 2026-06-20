@@ -1,0 +1,272 @@
+---
+layout: default
+title: "MME Workshop Demo - Learning to Infer Chinese Vocabulary"
+description: "Experience the phenomenon behind the research and infer unfamiliar words using only their parts."
+permalink: /research/mme-demo/
+---
+
+<main class="page">
+  <a href="{{ '/research/' | relative_url }}" class="demo-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 5 5 12 12 19"></polyline>
+    </svg>
+    Research
+  </a>
+
+  <header class="demo-header">
+    <p class="eyebrow accent-p2">MME Workshop &middot; EACL 2026</p>
+    <h1 class="demo-title">Learning to Infer, Not Just Memorize, Chinese Vocabulary</h1>
+    <p class="demo-subtitle">Experience the phenomenon this research is about, firsthand.</p>
+  </header>
+
+  <nav class="progress-dots" aria-label="Demo panels">
+    <button class="pdot pdot--active" data-panel="english" aria-label="English">
+      <span class="pdot__dot"></span>
+      <span class="pdot__label">English</span>
+    </button>
+    <button class="pdot" data-panel="modern" aria-label="Modern Chinese">
+      <span class="pdot__dot"></span>
+      <span class="pdot__label">Modern Chinese</span>
+    </button>
+    <button class="pdot" data-panel="classical" aria-label="Classical Chinese">
+      <span class="pdot__dot"></span>
+      <span class="pdot__label">Classical Chinese <span class="pdot__sub">(for Chinese readers)</span></span>
+    </button>
+  </nav>
+
+  <div class="demo-panels">
+    <section class="demo-panel demo-panel--active" id="panel-english" aria-label="English panel">
+      <p class="demo-prompt">You encounter a word you have never seen before. Can you figure out what it means?</p>
+
+      <p class="demo-sentence">
+        &ldquo;Her grandmother had always been quietly
+        <mark class="word-highlight accent-p2">pervicacious</mark>.&rdquo;
+      </p>
+
+      <div class="root-chips">
+        <span class="root-chip">
+          <span class="root-chip__root">per</span>
+          <span class="root-chip__meaning">thoroughly, to the end</span>
+        </span>
+        <span class="root-chip">
+          <span class="root-chip__root">vic</span>
+          <span class="root-chip__meaning">to conquer, to overcome</span>
+        </span>
+        <span class="root-chip">
+          <span class="root-chip__root">-acious</span>
+          <span class="root-chip__meaning">tending to</span>
+        </span>
+      </div>
+
+      <p class="demo-question">What do you think this word means?</p>
+
+      <div class="reveal-wrap">
+        <p class="reveal-text reveal-text--blurred" id="reveal-en">
+          <em>stubbornly persistent; refusing to yield no matter what</em>
+        </p>
+        <button class="reveal-btn" data-target="reveal-en" data-payoff="payoff-en">Reveal</button>
+      </div>
+
+      <div class="demo-payoff" id="payoff-en">
+        <p class="demo-payoff__prose">
+          You just inferred a word you had never seen, using nothing but its parts. Now try the same thing in a language you have never studied.
+        </p>
+        <button class="demo-proceed" data-next="modern">
+          Now try it in Modern Chinese
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <section class="demo-panel" id="panel-modern" aria-label="Modern Chinese panel">
+      <p class="demo-prompt">Here is a sentence in Modern Chinese. One word is left for you to infer.</p>
+
+      <div class="demo-sentence-block">
+        <p class="demo-sentence-zh">
+          在這個過程中，他<mark class="word-highlight accent-p2">獲得</mark>了很多。
+        </p>
+        <p class="demo-sentence-gloss">
+          &ldquo;In this process, he <span class="blank-underline">___</span> a great deal.&rdquo;
+        </p>
+      </div>
+
+      <div class="radical-group">
+        <p class="radical-group__char">獲</p>
+        <div class="root-chips">
+          <span class="root-chip">
+            <span class="root-chip__root">犭</span>
+            <span class="root-chip__meaning">animals, especially animals pursued, caught, controlled, or acted upon</span>
+          </span>
+          <span class="root-chip">
+            <span class="root-chip__root">蒦</span>
+            <span class="root-chip__meaning">bringing a target under control or into one's possession after it was free, dispersed, or inaccessible</span>
+          </span>
+        </div>
+      </div>
+
+      <hr class="demo-divider" />
+
+      <div class="radical-group">
+        <p class="radical-group__char">得</p>
+        <div class="root-chips">
+          <span class="root-chip">
+            <span class="root-chip__root">彳</span>
+            <span class="root-chip__meaning">movement, conduct, or gradual progression along a course</span>
+          </span>
+          <span class="root-chip">
+            <span class="root-chip__root">㝵</span>
+            <span class="root-chip__meaning">reaching and successfully securing something, so that it becomes possessed or available</span>
+          </span>
+        </div>
+      </div>
+
+      <p class="demo-hint">
+        The sentence tells you he ended up with a great deal of something. What might the radicals suggest about how he came to have it?
+      </p>
+
+      <p class="demo-question">Based on the radicals, what do you think 獲得 means?</p>
+
+      <div class="reveal-wrap">
+        <p class="reveal-text reveal-text--blurred" id="reveal-zh">
+          獲得 - to obtain, to gain, to acquire. The characters together trace the full arc: pursuing and capturing something out of reach (獲), then moving toward it and securing it so it becomes yours (得).
+        </p>
+        <button class="reveal-btn" data-target="reveal-zh" data-payoff="payoff-zh">Reveal</button>
+      </div>
+
+      <div class="demo-payoff" id="payoff-zh">
+        <p class="demo-payoff__prose">
+          You have probably never studied Chinese. Yet the radicals gave you enough to get there.
+        </p>
+        <p class="demo-payoff__prose">
+          Native Chinese speakers use radical knowledge like this automatically. Most L2 learners never develop it. This project uses LLMs to model that ability, with the eventual goal of building radical awareness into L2 curricula.
+        </p>
+        <div class="demo-payoff__actions">
+          <button class="demo-proceed" data-next="classical">
+            Know Chinese? Try a harder one
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+          <a href="{{ '/research/' | relative_url }}" class="demo-link">
+            See the research
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-panel" id="panel-classical" aria-label="Classical Chinese panel">
+      <p class="demo-prompt">
+        Here is a passage from the <em>Sh&#257;nh&#462;ij&#299;ng</em> (Classic of Mountains and Seas), a Chinese geographical text from the 4th century BC, a challenge even for native speakers. One character has no standard translation. Infer it from its radical.
+      </p>
+
+      <div class="demo-sentence-block">
+        <p class="demo-sentence-zh demo-sentence-zh--lg">
+          又东二百里，曰葛山，其上多赤金，其下多<mark class="word-highlight accent-p2">瑊</mark>石。
+        </p>
+        <p class="demo-sentence-gloss">
+          &ldquo;Two hundred leagues further east is Geshan Mountain. Its top is full of red gold. Its foot is full of <span class="blank-underline">___</span> stones.&rdquo;
+        </p>
+      </div>
+
+      <div class="radical-specimen">
+        <span class="radical-specimen__char">&#x248E9;</span>
+        <span class="radical-specimen__label">
+          &#x248E9; indicates the jade radical. When you see this component in a character, it often signals something related to jade, gems, or precious stones.
+        </span>
+      </div>
+
+      <p class="demo-hint">
+        The passage already tells you the mountain is full of red gold at its top. What might be found at its foot?
+      </p>
+
+      <p class="demo-question">Based on the radical, what kind of stone do you think 瑊 refers to?</p>
+
+      <div class="reveal-wrap">
+        <p class="reveal-text reveal-text--blurred" id="reveal-cls">
+          瑊 - a type of precious stone or jade-like gem. The &#x248E9; radical marks it immediately as something valuable and gem-like, even if you have never seen this character before.
+        </p>
+        <button class="reveal-btn" data-target="reveal-cls" data-payoff="payoff-cls">Reveal</button>
+      </div>
+
+      <div class="demo-payoff" id="payoff-cls">
+        <p class="demo-payoff__prose">
+          This character appears fewer than a handful of times in all of Classical Chinese literature. Yet you just inferred its meaning.
+        </p>
+        <p class="demo-payoff__prose">
+          Native Chinese speakers use radical knowledge like this automatically. Most L2 learners never develop it. This project uses LLMs to model that ability, with the eventual goal of building radical awareness into L2 curricula.
+        </p>
+        <a href="{{ '/research/' | relative_url }}" class="demo-link">
+          See the research
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<script>
+(function () {
+  var PANELS = ['english', 'modern', 'classical'];
+
+  function $$(sel, ctx) { return (ctx || document).querySelectorAll(sel); }
+
+  function goToPanel(name) {
+    var idx = PANELS.indexOf(name);
+    if (idx < 0) return;
+
+    $$('.pdot').forEach(function (btn, i) {
+      btn.classList.toggle('pdot--active', PANELS[i] === name);
+      btn.classList.toggle('pdot--done', i < idx);
+    });
+
+    $$('.demo-panel').forEach(function (sec) {
+      var isActive = sec.id === 'panel-' + name;
+      sec.classList.toggle('demo-panel--active', isActive);
+    });
+  }
+
+  $$('.pdot').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      goToPanel(btn.dataset.panel);
+    });
+  });
+
+  $$('.demo-proceed').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      goToPanel(btn.dataset.next);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  $$('.reveal-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var target = document.getElementById(btn.dataset.target);
+      var payoff = document.getElementById(btn.dataset.payoff);
+      if (target) target.classList.remove('reveal-text--blurred');
+      btn.style.display = 'none';
+      if (payoff) {
+        setTimeout(function () {
+          payoff.classList.add('demo-payoff--visible');
+        }, 400);
+      }
+    });
+  });
+})();
+</script>

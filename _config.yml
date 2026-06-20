@@ -22,5 +22,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - personal-website-2
+  - personal-website-3
   - _pages
   - vendor
