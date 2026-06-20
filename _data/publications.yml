@@ -4,12 +4,12 @@
   year: In preparation
   title: "Does Experience with One Language Change How Another Is Parsed?"
   authors: "P. Acharya, A. Anastasopoulos"
-  note: "MIT CPL Lab"
+  note: "MIT"
 
 - venue: "MME Workshop, EACL"
   year: "2026"
   title: "Learning to Infer, Not Just Memorize, Chinese Vocabulary"
-  authors: "P. Acharya et al."
+  authors: "Poorvi Acharya, Yufei Liu"
   note: "ETH Zürich"
   url: "/files/Hanzi_Educational_Model.pdf"
 
@@ -17,5 +17,5 @@
   year: "2025"
   title: "Tracing L1 Interference in English Learner Writing: A Longitudinal Corpus with Error Annotations"
   authors: "Poorvi Acharya, J. Elizabeth Liebl, Dhiman Goswami, Kai North, Marcos Zampieri, Antonios Anastasopoulos"
-  note: "ACL Anthology"
+  note: "George Mason University"
   url: "https://aclanthology.org/2025.emnlp-main.766/"

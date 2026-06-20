@@ -11,10 +11,6 @@ permalink: /publications/
   <header class="intro">
     <p class="eyebrow">Publications</p>
     <h1>Citable papers, preprints, and links.</h1>
-    <p>
-      You can also find my articles on
-      <a href="https://scholar.google.com/citations?hl=en&user=NPvy2gIAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>.
-    </p>
   </header>
 
   <ol class="pub-list">
@@ -22,7 +18,10 @@ permalink: /publications/
     <li class="pub-item">
       <div class="pub-meta">
         <div class="accent-p1">{{ pub.venue }}</div>
-        <div>{{ pub.year }}</div>
+        <div class="pub-year">{{ pub.year }}</div>
+        {% if pub.note %}
+        <div class="pub-meta-note">{{ pub.note }}</div>
+        {% endif %}
       </div>
       <div class="pub-body">
         <h2 class="pub-title">
@@ -33,7 +32,7 @@ permalink: /publications/
           {% endif %}
         </h2>
         <p class="pub-authors">
-          {{ pub.authors }}{% if pub.note %} · {{ pub.note }}{% endif %}
+          {{ pub.authors }}
         </p>
       </div>
     </li>

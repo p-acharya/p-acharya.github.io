@@ -74,8 +74,8 @@ permalink: /
   </section>
 
   {%- comment -%} ===== Position + Languages ===== {%- endcomment -%}
-  <section class="about-grid">
-    <div class="about-bio">
+  <section class="about-grid about-grid--single">
+    <div class="about-bio about-bio--full">
       <h2 class="section-label">Background</h2>
       <p>
         I am a PhD student in Computer Science at <strong>George Mason
