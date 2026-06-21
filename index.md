@@ -1,4 +1,4 @@
-g---
+---
 layout: default
 title: Poorvi Acharya — Computational Psycholinguistics
 description: >-
