@@ -1,11 +1,13 @@
 ---
 layout: default
-title: "MME Workshop Demo - Learning to Infer Chinese Vocabulary"
-description: "Experience the phenomenon behind the research and infer unfamiliar words using only their parts."
+title: "MME Workshop Demo — Learning to Infer Chinese Vocabulary"
+description: "Experience the phenomenon behind the research — infer unfamiliar words using nothing but their parts."
 permalink: /research/mme-demo/
 ---
 
-<main class="page">
+<main class="page demo-page">
+
+  <!-- Back link -->
   <a href="{{ '/research/' | relative_url }}" class="demo-back">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -15,12 +17,14 @@ permalink: /research/mme-demo/
     Research
   </a>
 
+  <!-- Header -->
   <header class="demo-header">
     <p class="eyebrow accent-p2">MME Workshop &middot; EACL 2026</p>
     <h1 class="demo-title">Learning to Infer, Not Just Memorize, Chinese Vocabulary</h1>
-    <p class="demo-subtitle">Experience the phenomenon this research is about, firsthand.</p>
+    <p class="demo-subtitle">Can you infer the meaning of a character you&apos;ve never seen?</p>
   </header>
 
+  <!-- Progress dots -->
   <nav class="progress-dots" aria-label="Demo panels">
     <button class="pdot pdot--active" data-panel="english" aria-label="English">
       <span class="pdot__dot"></span>
@@ -36,28 +40,41 @@ permalink: /research/mme-demo/
     </button>
   </nav>
 
+  <!-- ── Panel wrapper ───────────────────────────────────────── -->
   <div class="demo-panels">
+
+    <!-- Panel 1: English -->
     <section class="demo-panel demo-panel--active" id="panel-english" aria-label="English panel">
-      <p class="demo-prompt">You encounter a word you have never seen before. Can you figure out what it means?</p>
+
+      <p class="demo-prompt">You encounter a word you&apos;ve never seen before. Can you figure out what it means?</p>
 
       <p class="demo-sentence">
         &ldquo;Her grandmother had always been quietly
         <mark class="word-highlight accent-p2">pervicacious</mark>.&rdquo;
       </p>
 
-      <div class="root-chips">
-        <span class="root-chip">
-          <span class="root-chip__root">per</span>
-          <span class="root-chip__meaning">thoroughly, to the end</span>
-        </span>
-        <span class="root-chip">
-          <span class="root-chip__root">vic</span>
-          <span class="root-chip__meaning">to conquer, to overcome</span>
-        </span>
-        <span class="root-chip">
-          <span class="root-chip__root">-acious</span>
-          <span class="root-chip__meaning">tending to</span>
-        </span>
+      <!-- Radical diagram: per·vic·acious -->
+      <div class="radical-diagram radical-diagram--english">
+        <span class="radical-diagram__char radical-diagram__char--latin">per&middot;vic&middot;acious</span>
+        <svg class="radical-diagram__svg" viewBox="0 0 320 48" aria-hidden="true">
+          <line x1="160" y1="4" x2="53"  y2="44" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="160" y1="4" x2="160" y2="44" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="160" y1="4" x2="267" y2="44" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 3"/>
+        </svg>
+        <div class="radical-diagram__chips">
+          <span class="rchip">
+            <span class="rchip__symbol" style="font-family:var(--font-serif);font-size:2.5rem;color:var(--muted-foreground)">per</span>
+            <span class="rchip__meaning">thoroughly, to the end</span>
+          </span>
+          <span class="rchip">
+            <span class="rchip__symbol" style="font-family:var(--font-serif);font-size:2.5rem;color:var(--muted-foreground)">vic</span>
+            <span class="rchip__meaning">to conquer, to overcome</span>
+          </span>
+          <span class="rchip">
+            <span class="rchip__symbol" style="font-family:var(--font-serif);font-size:2.5rem;color:var(--muted-foreground)">-acious</span>
+            <span class="rchip__meaning">tending to</span>
+          </span>
+        </div>
       </div>
 
       <p class="demo-question">What do you think this word means?</p>
@@ -71,7 +88,8 @@ permalink: /research/mme-demo/
 
       <div class="demo-payoff" id="payoff-en">
         <p class="demo-payoff__prose">
-          You just inferred a word you had never seen, using nothing but its parts. Now try the same thing in a language you have never studied.
+          You just inferred a word you&apos;d never seen &mdash; using nothing but its parts. Now try the same
+          thing in a language you&apos;ve never studied.
         </p>
         <button class="demo-proceed" data-next="modern">
           Now try it in Modern Chinese
@@ -82,9 +100,12 @@ permalink: /research/mme-demo/
           </svg>
         </button>
       </div>
+
     </section>
 
+    <!-- Panel 2: Modern Chinese -->
     <section class="demo-panel" id="panel-modern" aria-label="Modern Chinese panel">
+
       <p class="demo-prompt">Here is a sentence in Modern Chinese. One word is left for you to infer.</p>
 
       <div class="demo-sentence-block">
@@ -96,45 +117,61 @@ permalink: /research/mme-demo/
         </p>
       </div>
 
-      <div class="radical-group">
-        <p class="radical-group__char">獲</p>
-        <div class="root-chips">
-          <span class="root-chip">
-            <span class="root-chip__root">犭</span>
-            <span class="root-chip__meaning">animals, especially animals pursued, caught, controlled, or acted upon</span>
+      <!-- RadicalDiagram: 獲 -->
+      <div class="radical-diagram">
+        <span class="radical-diagram__char radical-diagram__char--overlay radical-diagram__char--huo" aria-label="獲">
+          <span class="radical-diagram__base">獲</span>
+          <span class="radical-diagram__overlay radical-diagram__overlay--semantic">獲</span>
+          <span class="radical-diagram__overlay radical-diagram__overlay--phonetic">獲</span>
+        </span>
+        <svg class="radical-diagram__svg" viewBox="0 0 280 48" aria-hidden="true">
+          <line x1="140" y1="4" x2="70"  y2="44" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="140" y1="4" x2="210" y2="44" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 3"/>
+        </svg>
+        <div class="radical-diagram__chips">
+          <span class="rchip">
+            <span class="rchip__symbol" style="color:oklch(0.50 0.09 45)">犭</span>
+            <span class="rchip__meaning">pursuit, capture, or control of something living or hard to contain</span>
           </span>
-          <span class="root-chip">
-            <span class="root-chip__root">蒦</span>
-            <span class="root-chip__meaning">bringing a target under control or into one's possession after it was free, dispersed, or inaccessible</span>
-          </span>
-        </div>
-      </div>
-
-      <hr class="demo-divider" />
-
-      <div class="radical-group">
-        <p class="radical-group__char">得</p>
-        <div class="root-chips">
-          <span class="root-chip">
-            <span class="root-chip__root">彳</span>
-            <span class="root-chip__meaning">movement, conduct, or gradual progression along a course</span>
-          </span>
-          <span class="root-chip">
-            <span class="root-chip__root">㝵</span>
-            <span class="root-chip__meaning">reaching and successfully securing something, so that it becomes possessed or available</span>
+          <span class="rchip">
+            <span class="rchip__symbol" style="color:oklch(0.52 0.08 80)">蒦</span>
+            <span class="rchip__meaning">seizing, taking hold of, or bringing something under control</span>
           </span>
         </div>
       </div>
 
-      <p class="demo-hint">
-        The sentence tells you he ended up with a great deal of something. What might the radicals suggest about how he came to have it?
-      </p>
+      <div class="demo-divider-line"></div>
+
+      <!-- RadicalDiagram: 得 -->
+      <div class="radical-diagram">
+        <span class="radical-diagram__char radical-diagram__char--overlay radical-diagram__char--de" aria-label="得">
+          <span class="radical-diagram__base">得</span>
+          <span class="radical-diagram__overlay radical-diagram__overlay--semantic">得</span>
+          <span class="radical-diagram__overlay radical-diagram__overlay--phonetic">得</span>
+        </span>
+        <svg class="radical-diagram__svg" viewBox="0 0 280 48" aria-hidden="true">
+          <line x1="140" y1="4" x2="70"  y2="44" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="140" y1="4" x2="210" y2="44" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 3"/>
+        </svg>
+        <div class="radical-diagram__chips">
+          <span class="rchip">
+            <span class="rchip__symbol" style="color:oklch(0.45 0.07 245)">彳</span>
+            <span class="rchip__meaning">movement, conduct, or progress along a course</span>
+          </span>
+          <span class="rchip">
+            <span class="rchip__symbol" style="color:oklch(0.44 0.06 155)">㝵</span>
+            <span class="rchip__meaning">reaching and successfully securing something</span>
+          </span>
+        </div>
+      </div>
+
+      <p class="demo-hint">Something substantial came out of this process. What do the radicals suggest happened?</p>
 
       <p class="demo-question">Based on the radicals, what do you think 獲得 means?</p>
 
       <div class="reveal-wrap">
         <p class="reveal-text reveal-text--blurred" id="reveal-zh">
-          獲得 - to obtain, to gain, to acquire. The characters together trace the full arc: pursuing and capturing something out of reach (獲), then moving toward it and securing it so it becomes yours (得).
+          獲得 &mdash; to obtain, to gain, to acquire. 獲 denotes the pursuit and capture of something out of reach; 得 denotes the movement toward it and the moment of securing it.
         </p>
         <button class="reveal-btn" data-target="reveal-zh" data-payoff="payoff-zh">Reveal</button>
       </div>
@@ -144,7 +181,7 @@ permalink: /research/mme-demo/
           You have probably never studied Chinese. Yet the radicals gave you enough to get there.
         </p>
         <p class="demo-payoff__prose">
-          Native Chinese speakers use radical knowledge like this automatically. Most L2 learners never develop it. This project uses LLMs to model that ability, with the eventual goal of building radical awareness into L2 curricula.
+          Native Chinese speakers use radical knowledge like this automatically. Most L2 learners never develop it. This project uses LLMs to model that ability &mdash; with the eventual goal of building radical awareness into L2 curricula.
         </p>
         <div class="demo-payoff__actions">
           <button class="demo-proceed" data-next="classical">
@@ -165,48 +202,69 @@ permalink: /research/mme-demo/
           </a>
         </div>
       </div>
+
     </section>
 
+    <!-- Panel 3: Classical Chinese -->
     <section class="demo-panel" id="panel-classical" aria-label="Classical Chinese panel">
+
       <p class="demo-prompt">
-        Here is a passage from the <em>Sh&#257;nh&#462;ij&#299;ng</em> (Classic of Mountains and Seas), a Chinese geographical text from the 4th century BC, a challenge even for native speakers. One character has no standard translation. Infer it from its radical.
+        Here is a passage from the <em>Sh&#257;nh&#462;ij&#299;ng</em> (Classic of Mountains and Seas), a Chinese
+        geographical text from the 4th century BC &mdash; a challenge even for native speakers. One character
+        has no standard translation. Infer it from its radical.
       </p>
 
       <div class="demo-sentence-block">
-        <p class="demo-sentence-zh demo-sentence-zh--lg">
+        <p class="demo-sentence-zh">
           又东二百里，曰葛山，其上多赤金，其下多<mark class="word-highlight accent-p2">瑊</mark>石。
         </p>
         <p class="demo-sentence-gloss">
-          &ldquo;Two hundred leagues further east is Geshan Mountain. Its top is full of red gold. Its foot is full of <span class="blank-underline">___</span> stones.&rdquo;
+          &ldquo;Two hundred leagues further east is Geshan Mountain. Its top is full of red gold. Its
+          foot is full of <span class="blank-underline">___</span> stones.&rdquo;
         </p>
       </div>
 
-      <div class="radical-specimen">
-        <span class="radical-specimen__char">&#x248E9;</span>
-        <span class="radical-specimen__label">
-          &#x248E9; indicates the jade radical. When you see this component in a character, it often signals something related to jade, gems, or precious stones.
-        </span>
+      <!-- RadicalDiagram: 瑊 -->
+      <div class="radical-diagram">
+        <span class="radical-diagram__char">瑊</span>
+        <svg class="radical-diagram__svg" viewBox="0 0 280 48" aria-hidden="true">
+          <line x1="140" y1="4" x2="70"  y2="44" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="140" y1="4" x2="210" y2="44" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 3"/>
+        </svg>
+        <div class="radical-diagram__chips">
+          <span class="rchip">
+            <span class="rchip__symbol" style="color:oklch(0.48 0.07 320)">𤣩</span>
+            <span class="rchip__meaning">semantic &mdash; signals jade, gems, or precious stones</span>
+          </span>
+          <span class="rchip">
+            <span class="rchip__symbol" style="color:var(--muted-foreground)">咸</span>
+            <span class="rchip__meaning">phonetic &mdash; indicates pronunciation only, no meaning</span>
+          </span>
+        </div>
       </div>
 
       <p class="demo-hint">
-        The passage already tells you the mountain is full of red gold at its top. What might be found at its foot?
+        The passage already tells you the mountain is full of red gold at its top. What might be found
+        at its foot?
       </p>
 
       <p class="demo-question">Based on the radical, what kind of stone do you think 瑊 refers to?</p>
 
       <div class="reveal-wrap">
         <p class="reveal-text reveal-text--blurred" id="reveal-cls">
-          瑊 - a type of precious stone or jade-like gem. The &#x248E9; radical marks it immediately as something valuable and gem-like, even if you have never seen this character before.
+          瑊 &mdash; a type of precious stone or jade-like gem. The 𤣩 radical marks it immediately as
+          something valuable, mineral, gem-like &mdash; even if you have never seen this character before.
         </p>
         <button class="reveal-btn" data-target="reveal-cls" data-payoff="payoff-cls">Reveal</button>
       </div>
 
       <div class="demo-payoff" id="payoff-cls">
         <p class="demo-payoff__prose">
-          This character appears fewer than a handful of times in all of Classical Chinese literature. Yet you just inferred its meaning.
+          This character appears fewer than a handful of times in all of Classical Chinese literature.
+          Yet you just inferred its meaning.
         </p>
         <p class="demo-payoff__prose">
-          Native Chinese speakers use radical knowledge like this automatically. Most L2 learners never develop it. This project uses LLMs to model that ability, with the eventual goal of building radical awareness into L2 curricula.
+          Native Chinese speakers use radical knowledge like this automatically. Most L2 learners never develop it. This project uses LLMs to model that ability &mdash; with the eventual goal of building radical awareness into L2 curricula.
         </p>
         <a href="{{ '/research/' | relative_url }}" class="demo-link">
           See the research
@@ -217,35 +275,32 @@ permalink: /research/mme-demo/
           </svg>
         </a>
       </div>
+
     </section>
-  </div>
+
+  </div><!-- /demo-panels -->
 </main>
 
 <script>
 (function () {
   var PANELS = ['english', 'modern', 'classical'];
 
-  function $$(sel, ctx) { return (ctx || document).querySelectorAll(sel); }
+  function $$(sel) { return document.querySelectorAll(sel); }
 
   function goToPanel(name) {
     var idx = PANELS.indexOf(name);
     if (idx < 0) return;
-
     $$('.pdot').forEach(function (btn, i) {
       btn.classList.toggle('pdot--active', PANELS[i] === name);
-      btn.classList.toggle('pdot--done', i < idx);
+      btn.classList.toggle('pdot--done',   i < idx);
     });
-
     $$('.demo-panel').forEach(function (sec) {
-      var isActive = sec.id === 'panel-' + name;
-      sec.classList.toggle('demo-panel--active', isActive);
+      sec.classList.toggle('demo-panel--active', sec.id === 'panel-' + name);
     });
   }
 
   $$('.pdot').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      goToPanel(btn.dataset.panel);
-    });
+    btn.addEventListener('click', function () { goToPanel(btn.dataset.panel); });
   });
 
   $$('.demo-proceed').forEach(function (btn) {
@@ -262,9 +317,7 @@ permalink: /research/mme-demo/
       if (target) target.classList.remove('reveal-text--blurred');
       btn.style.display = 'none';
       if (payoff) {
-        setTimeout(function () {
-          payoff.classList.add('demo-payoff--visible');
-        }, 400);
+        setTimeout(function () { payoff.classList.add('demo-payoff--visible'); }, 400);
       }
     });
   });

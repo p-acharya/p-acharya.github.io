@@ -1035,6 +1035,129 @@ body {
   stroke: currentColor;
 }
 
+/* ---------- Radical diagram (centered, SVG connectors) ---------- */
+.radical-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.radical-diagram__char {
+  font-family: "Noto Serif SC", "Songti SC", STSong, var(--font-serif);
+  font-size: clamp(5rem, 12vw, 8rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--foreground);
+  user-select: none;
+}
+.radical-diagram__char--overlay {
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0;
+}
+.radical-diagram__base,
+.radical-diagram__overlay {
+  display: block;
+  font-family: "Noto Serif SC", "Songti SC", STSong, var(--font-serif);
+  font-size: inherit;
+  line-height: 1;
+}
+.radical-diagram__base {
+  color: color-mix(in oklch, var(--foreground) 30%, transparent);
+}
+.radical-diagram__overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.radical-diagram__char--huo .radical-diagram__overlay--semantic {
+  color: oklch(0.50 0.09 45);
+  clip-path: inset(0 66% 0 0);
+}
+.radical-diagram__char--huo .radical-diagram__overlay--phonetic {
+  color: oklch(0.52 0.08 80);
+  clip-path: inset(0 0 0 24%);
+}
+.radical-diagram__char--de .radical-diagram__overlay--semantic {
+  color: oklch(0.45 0.07 245);
+  clip-path: inset(0 64% 0 0);
+}
+.radical-diagram__char--de .radical-diagram__overlay--phonetic {
+  color: oklch(0.44 0.06 155);
+  clip-path: inset(0 0 0 28%);
+}
+.radical-diagram__char--latin {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  letter-spacing: -0.02em;
+}
+.radical-diagram__svg {
+  width: 100%;
+  max-width: 20rem;
+  height: 3rem;
+  overflow: visible;
+}
+.radical-diagram__svg line {
+  stroke-width: 2;
+}
+.radical-diagram__chips {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem 2rem;
+  width: 100%;
+  max-width: 20rem;
+}
+.radical-diagram--english .radical-diagram__chips {
+  flex-wrap: nowrap;
+  gap: 1.25rem;
+  max-width: 26rem;
+}
+.radical-diagram--english .rchip {
+  min-width: 0;
+  flex: 1 1 0;
+}
+.radical-diagram--english .rchip__symbol {
+  display: block;
+  white-space: nowrap;
+}
+.radical-diagram--english .rchip__meaning {
+  display: block;
+  white-space: normal;
+}
+.rchip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 4.5rem;
+}
+.rchip__symbol {
+  font-family: "Noto Serif SC", "Songti SC", STSong, var(--font-serif);
+  font-size: 2.5rem;
+  line-height: 1;
+}
+.rchip__meaning {
+  margin-top: 0.375rem;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  color: var(--muted-foreground);
+  line-height: 1.4;
+  max-width: 9rem;
+}
+.demo-divider-line {
+  width: 100%;
+  border-top: 1px solid color-mix(in oklch, var(--border) 60%, transparent);
+}
+
+/* demo page centering - matches Next.js max-w-2xl mx-auto */
+.demo-page {
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ---------- MME Demo ---------- */
 .demo-back {
   display: inline-flex;
@@ -1267,7 +1390,7 @@ body {
 .demo-hint {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   color: color-mix(in oklch, var(--muted-foreground) 80%, transparent);
   line-height: 1.65;
   margin: 0;
