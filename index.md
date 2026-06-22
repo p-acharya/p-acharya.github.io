@@ -18,9 +18,7 @@ permalink: /
         I study how humans and language models learn, process, and generalize language.
       </h1>
       <p class="hero__lede">
-        My work connects cognitive science, second language acquisition, and
-        machine learning to build human-grounded models of language behavior
-        while improving how we evaluate language technology.
+        My work combines cognitive science and machine learning to model second language acquisition, with the dual goal of explaining human language processing and improving the evaluation of LLMs.
       </p>
       <div class="hero__cta">
         <a class="btn-primary" href="{{ '/research/' | relative_url }}">
@@ -55,11 +53,9 @@ permalink: /
           <span class="tag accent-p1">3 Projects</span>
           <span class="affiliation">Parsing · Inference · Transfer</span>
         </div>
-        <h2 class="card__title">How experience with one language reshapes the mind&apos;s grip on another.</h2>
+        <h2 class="card__title">How knowing one language shapes the way you read another</h2>
         <p class="card__hook">
-          Bilingual readers parse, infer, and err in revealing ways. Three
-          threads pair careful experimental design with scalable computational
-          tools — from the syntax&ndash;discourse interface to L1 transfer detection.
+          Bilinguals parse, infer, and err in revealing ways. Because a second language is never acquired in isolation, my work uses computational models to investigate how native language structures shape how we process and produce a new one.
         </p>
         <span class="card__more">
           See all three projects
@@ -90,7 +86,7 @@ permalink: /
         and — more recently — getting into tea.  
       </p>
       <p>
-        I got into this field for obvious reasons. Learning languages is somewhere between a hobby and a pathology for me. I speak ಕನ್ನಡ, हिंदी, Français, 日本語, Deutsch, and 한국어, and have studied Sanskrit, Latin, Ελληνική, יידיש, and Middle Persian. This turns out to be useful for researching why languages are hard in such different ways.
+        I got into this field for obvious reasons. Learning languages is somewhere between a hobby and a pathology for me. I speak <a class="lang-link" href="https://en.wikipedia.org/wiki/Kannada" target="_blank" rel="noopener noreferrer"><span class="lang-sample" lang="kn">ಕನ್ನಡ</span></a>, <a class="lang-link" href="https://en.wikipedia.org/wiki/Hindi" target="_blank" rel="noopener noreferrer"><span class="lang-sample" lang="hi">हिंदी</span></a>, <a class="lang-link" href="https://en.wikipedia.org/wiki/French_language" target="_blank" rel="noopener noreferrer"><span class="lang-sample" lang="fr">Français</span></a>, <a class="lang-link" href="https://en.wikipedia.org/wiki/Japanese_language" target="_blank" rel="noopener noreferrer"><span class="lang-sample" lang="ja">日本語</span></a>, <a class="lang-link" href="https://en.wikipedia.org/wiki/German_language" target="_blank" rel="noopener noreferrer"><span class="lang-sample" lang="de">Deutsch</span></a>, and <a class="lang-link" href="https://en.wikipedia.org/wiki/Korean_language" target="_blank" rel="noopener noreferrer"><span class="lang-sample" lang="ko">한국어</span></a>, and have studied <a class="lang-link" href="https://en.wikipedia.org/wiki/Sanskrit" target="_blank" rel="noopener noreferrer"><span class="lang-sample" lang="sa">संस्कृतम्</span></a>, <a class="lang-link" href="https://en.wikipedia.org/wiki/Latin" target="_blank" rel="noopener noreferrer"><span class="lang-sample" lang="la">Latin</span></a>, <a class="lang-link" href="https://en.wikipedia.org/wiki/Greek_language" target="_blank" rel="noopener noreferrer"><span class="lang-sample" lang="el">Ἑλληνική</span></a>, <a class="lang-link" href="https://en.wikipedia.org/wiki/Yiddish" target="_blank" rel="noopener noreferrer"><span class="lang-sample" lang="yi">ייִדיש</span></a>, and <a class="lang-link" href="https://en.wikipedia.org/wiki/Middle_Persian" target="_blank" rel="noopener noreferrer"><span class="lang-sample" lang="fa-Latn">Middle Persian</span></a>. This turns out to be useful for researching why languages are hard in such different ways.
       </p>
     </div>
   </section>
