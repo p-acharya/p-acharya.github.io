@@ -1289,6 +1289,337 @@ body {
   margin-right: auto;
 }
 
+/* ---------- L1 Demo ---------- */
+.l1-specimen {
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--card);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: center;
+}
+
+.l1-sentence {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--foreground);
+  text-wrap: balance;
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .l1-sentence {
+    font-size: 1.5rem;
+  }
+}
+
+.l1-highlight {
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklch, var(--p3) 50%, transparent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  transition: color 0.5s ease, text-decoration-color 0.5s ease;
+}
+
+.l1-highlight.is-revealed {
+  color: var(--p3);
+  text-decoration-color: transparent;
+}
+
+.l1-alignment {
+  width: 100%;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.6s ease, opacity 0.5s ease;
+}
+
+.l1-alignment.is-revealed {
+  max-height: 16rem;
+  opacity: 1;
+}
+
+.l1-alignment__rule {
+  border: none;
+  border-top: 1px solid color-mix(in oklch, var(--border) 40%, transparent);
+  margin: 0 0 1.25rem;
+}
+
+.l1-pairs {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .l1-pairs {
+    gap: 2.5rem;
+  }
+}
+
+.word-pair {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  min-width: 0;
+}
+
+.word-pair__en {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--foreground);
+  transition: color 0.5s ease;
+}
+
+.word-pair__en.is-revealed {
+  color: var(--p3);
+}
+
+.word-pair__connector {
+  width: 1px;
+  height: 0;
+  background: color-mix(in oklch, var(--border) 60%, transparent);
+  transition: height 0.4s ease 0.3s;
+}
+
+.word-pair__connector.is-revealed {
+  height: 1.25rem;
+}
+
+.word-pair__zh {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: opacity 0.5s ease 0.4s, transform 0.5s ease 0.4s;
+}
+
+.word-pair__zh.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.word-pair__hanzi {
+  font-family: "Noto Serif SC", "Songti SC", STSong, var(--font-serif);
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--foreground);
+}
+
+.word-pair__pinyin {
+  margin-top: 0.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-style: italic;
+  letter-spacing: 0.03em;
+  color: var(--muted-foreground);
+}
+
+.l1-mapping-label {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: color-mix(in oklch, var(--muted-foreground) 60%, transparent);
+  margin: 1rem 0 0;
+}
+
+.l1-prompt {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+  max-height: 20rem;
+  overflow: hidden;
+}
+
+.l1-prompt.is-hidden {
+  opacity: 0;
+  max-height: 0;
+  pointer-events: none;
+}
+
+.l1-payoff {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  opacity: 0;
+  transform: translateY(0.75rem);
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.7s ease, transform 0.7s ease, max-height 0.7s ease;
+}
+
+.l1-payoff.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 60rem;
+  overflow: visible;
+}
+
+/* Removed: pullquote box styling - now just plain lead sentence */
+.l1-lead-sentence {
+  font-family: var(--font-sans);
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--foreground);
+  text-wrap: wrap;
+  margin: 2.5rem 0 1.5rem 0;
+  padding: 1.5rem 0 1rem 0;
+  border-top: 2px solid var(--border);
+  background: transparent;
+}
+
+@media (min-width: 640px) {
+  .l1-lead-sentence {
+    font-size: 1.45rem;
+  }
+}
+
+.l1-proof-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+}
+
+.l1-proof-grid > * {
+  min-width: 0;
+  width: 100%;
+}
+
+.l1-editorial {
+  border-left: 2px solid var(--border);
+  padding-left: 1rem;
+  font-family: var(--font-serif);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+}
+
+.l1-editorial p {
+  margin: 0;
+}
+
+.l1-editorial p + p {
+  margin-top: 0.8rem;
+}
+
+.l1-editorial--impact {
+  border-left: 1px solid color-mix(in oklch, var(--border) 80%, transparent 20%);
+  background: transparent;
+  border-radius: 0;
+  padding: 0.5rem 0 0.5rem 1rem;
+}
+
+.l1-impact-kicker {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: color-mix(in oklch, var(--p1) 60%, var(--muted-foreground) 40%);
+}
+
+.l1-json-stack {
+  position: relative;
+}
+
+.l1-json-stack {
+  margin-top: 0.2rem;
+}
+
+.l1-json-card {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: color-mix(in oklch, var(--card) 92%, white 8%);
+  overflow: hidden;
+  box-shadow: 0 14px 28px -20px rgba(32, 36, 44, 0.42);
+}
+
+.l1-json-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  padding: 0.5rem 1rem;
+  background: color-mix(in oklch, var(--secondary) 40%, transparent);
+}
+
+.l1-json-header__label {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted-foreground);
+}
+
+.l1-json-header__index {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  color: color-mix(in oklch, var(--muted-foreground) 60%, transparent);
+}
+
+.l1-json-body {
+  padding: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.75;
+  margin: 0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.jt-brace {
+  color: color-mix(in oklch, var(--muted-foreground) 50%, transparent);
+}
+
+.jt-key {
+  color: var(--p1);
+}
+
+.jt-punc {
+  color: var(--muted-foreground);
+}
+
+.jt-str-a {
+  color: var(--p3);
+}
+
+.jt-str-b {
+  color: color-mix(in oklch, var(--p3) 70%, transparent);
+}
+
+.jt-type {
+  color: var(--p2);
+}
+
+.jt-num {
+  color: color-mix(in oklch, var(--foreground) 70%, var(--p1) 30%);
+}
+
+.jt-str-c {
+  color: color-mix(in oklch, var(--foreground) 80%, transparent);
+}
+
+.jt-str-d {
+  color: color-mix(in oklch, var(--foreground) 60%, transparent);
+}
+
 /* ---------- MME Demo ---------- */
 .demo-back {
   display: inline-flex;

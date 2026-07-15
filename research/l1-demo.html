@@ -1,0 +1,161 @@
+---
+layout: default
+title: "Persistent L1 Influence in L2 Writing — Demo"
+description: "Experience syntactic transfer firsthand: a Mandarin speaker's native syntax, hidden inside an English sentence."
+permalink: /research/l1-demo/
+---
+
+<main class="page demo-page" style="padding-top: 3rem; padding-bottom: 5rem;">
+
+  <a href="{{ '/research/' | relative_url }}" class="demo-back">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+         aria-hidden="true">
+      <path d="M19 12H5M12 5l-7 7 7 7"/>
+    </svg>
+    Research
+  </a>
+
+  <header class="demo-header">
+    <p class="section-label" style="color: var(--p3);">EMNLP 2025 &middot; George Mason University</p>
+    <h1 class="demo-title">Persistent L1 Influence in L2 Writing</h1>
+    <p class="demo-subtitle">A hands-on introduction.</p>
+  </header>
+
+  <div class="l1-specimen">
+    <p class="l1-sentence">
+      &ldquo;I improved a lot
+      <span class="l1-highlight" id="highlight">in the learning aspect</span>.&rdquo;
+    </p>
+
+    <div class="l1-alignment" id="alignment" aria-hidden="true">
+      <hr class="l1-alignment__rule" />
+      <div class="l1-pairs">
+
+        <div class="word-pair">
+          <span class="word-pair__en" id="en-in">in</span>
+          <div class="word-pair__connector" id="conn-in"></div>
+          <div class="word-pair__zh" id="zh-in">
+            <span class="word-pair__hanzi">在</span>
+            <span class="word-pair__pinyin">zài</span>
+          </div>
+        </div>
+
+        <div class="word-pair">
+          <span class="word-pair__en" id="en-learning">the learning</span>
+          <div class="word-pair__connector" id="conn-learning"></div>
+          <div class="word-pair__zh" id="zh-learning">
+            <span class="word-pair__hanzi">学习</span>
+            <span class="word-pair__pinyin">xuéxí</span>
+          </div>
+        </div>
+
+        <div class="word-pair">
+          <span class="word-pair__en" id="en-aspect">aspect</span>
+          <div class="word-pair__connector" id="conn-aspect"></div>
+          <div class="word-pair__zh" id="zh-aspect">
+            <span class="word-pair__hanzi">方面</span>
+            <span class="word-pair__pinyin">fāngmiàn</span>
+          </div>
+        </div>
+
+      </div>
+      <p class="l1-mapping-label">word-for-word mapping &middot; Mandarin &rarr; English</p>
+    </div>
+  </div>
+
+  <div class="l1-prompt" id="prompt" style="margin-top: 1.5rem;">
+    <p class="demo-prompt">
+      You probably understood this fine. There is nothing wrong with the grammar. But the phrasing is just
+      slightly awkward. Why did the writer choose these exact words?
+    </p>
+    <button
+      class="reveal-btn"
+      id="reveal-btn"
+      onclick="revealL1()"
+    >
+      Reveal the hidden structure
+    </button>
+  </div>
+
+  <div class="l1-payoff" id="payoff" style="margin-top: 1.5rem;">
+    <p class="l1-lead-sentence">
+     The phrasing is awkward in English because it is not English. It is a Mandarin construction, translated word for word.
+    </p>
+
+    <div class="l1-proof-grid">
+      <div class="l1-editorial l1-editorial--impact">
+        <p class="l1-impact-kicker">What a standard rewrite misses</p>
+        <p>
+          A standard LLM would silently rewrite this as &ldquo;in terms of learning.&rdquo;, with no account of why it was written this way.
+        </p>
+        <p>
+          That rewrite erases the cognitive footprint entirely. Detecting what&rsquo;s
+          actually happening requires fluency in Chinese and English, deep linguistic knowledge,
+          and SLA pedagogy.
+        </p>
+        <p>
+          This project automates that exact expertise, extracting thousands of these
+          structural fingerprints across a longitudinal corpus of 620 essays.
+        </p>
+      </div>
+
+      <div class="l1-json-stack">
+        <div class="l1-json-card">
+          <div class="l1-json-header">
+            <span class="l1-json-header__label">Pipeline Output</span>
+            <span class="l1-json-header__index">Annotation #4,192</span>
+          </div>
+          <pre class="l1-json-body"><span class="jt-brace">{</span>
+  <span class="jt-key">"incorrect"</span><span class="jt-punc">: </span><span class="jt-str-a">"in the learning aspect"</span><span class="jt-punc">,</span>
+  <span class="jt-key">"correct"</span><span class="jt-punc">: </span><span class="jt-str-b">"in terms of learning"</span><span class="jt-punc">,</span>
+  <span class="jt-key">"type"</span><span class="jt-punc">: </span><span class="jt-type">"SYNTACTIC_INTERFERENCE"</span><span class="jt-punc">,</span>
+  <span class="jt-key">"reason"</span><span class="jt-punc">: </span><span class="jt-str-c">"Chinese syntax often uses phrases like '在...方面' which translates directly to 'in the... aspect', leading to syntactic interference."</span>
+<span class="jt-brace">}</span></pre>
+        </div>
+      </div>
+    </div>
+
+    <a href="{{ '/research/' | relative_url }}" class="demo-link">
+      See the research
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+           aria-hidden="true" style="width:1rem;height:1rem;">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+
+</main>
+
+<script>
+function revealL1() {
+  document.getElementById('highlight').classList.add('is-revealed');
+  document.getElementById('alignment').classList.add('is-revealed');
+  document.getElementById('alignment').removeAttribute('aria-hidden');
+
+  ['en-in', 'en-learning', 'en-aspect'].forEach(function(id) {
+    document.getElementById(id).classList.add('is-revealed');
+  });
+
+  ['conn-in', 'conn-learning', 'conn-aspect'].forEach(function(id) {
+    document.getElementById(id).classList.add('is-revealed');
+  });
+
+  ['zh-in', 'zh-learning', 'zh-aspect'].forEach(function(id) {
+    document.getElementById(id).classList.add('is-revealed');
+  });
+
+  document.getElementById('prompt').classList.add('is-hidden');
+
+  setTimeout(function() {
+    var payoff = document.getElementById('payoff');
+    payoff.classList.add('is-visible');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      payoff.scrollIntoView({ block: 'start' });
+    } else {
+      payoff.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, 700);
+}
+</script>
