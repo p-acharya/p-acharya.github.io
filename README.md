@@ -16,10 +16,10 @@ share fonts, palette, nav, data-driven content, and card styling:
 _config.yml                  Site config (kramdown + sass)
 _data/projects.yml           Project cards (title, hook, venue, accent, visual)
 _data/characters.yml         Data for the Chinese-character visual
-_data/news.yml               News timeline entries (About page)
 _data/publications.yml       Publications list data
 _layouts/default.html        HTML shell, fonts, Font Awesome, nav, metadata
 _includes/nav.html           Shared primary nav (About · Research · Publications)
+_includes/news.md            News timeline include (About page)
 _includes/project-card.html  Reusable card, loops over project data
 _includes/visuals/           syntax-tree · character-grid · error-json
 assets/css/main.scss         Design tokens + component styles
@@ -45,7 +45,7 @@ reference implementation and is excluded from the root Jekyll build.
 - **Projects:** add or reorder in `_data/projects.yml`. Set `featured: true`
   for the large side-by-side card. `accent` is `p1` (slate blue), `p2` (clay),
   or `p3` (sage). `visual` maps to `_includes/visuals/<visual>.html`.
-- **News:** edit `_data/news.yml` (`label` + `text`, newest first).
+- **News:** edit `_includes/news.md`.
 - **Publications:** edit `_data/publications.yml`.
 - **Languages / bio:** edit directly in `index.md`.
 - **Nav links:** edit `_includes/nav.html`.

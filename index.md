@@ -92,18 +92,7 @@ permalink: /
   </section>
 
   {%- comment -%} ===== News as a momentum timeline ===== {%- endcomment -%}
-  <section class="news" aria-label="News">
-    <h2 class="section-label">News</h2>
-    <ol class="timeline">
-      {% for item in site.data.news %}
-      <li class="timeline__item">
-        <span class="timeline__date">{{ item.label }}</span>
-        <span class="timeline__dot" aria-hidden="true"></span>
-        <p class="timeline__text">{{ item.text }}</p>
-      </li>
-      {% endfor %}
-    </ol>
-  </section>
+  {% include news.md %}
 
   <hr class="rule" />
 
